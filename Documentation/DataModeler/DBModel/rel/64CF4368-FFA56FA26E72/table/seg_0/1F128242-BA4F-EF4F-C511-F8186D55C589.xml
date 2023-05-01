@@ -1,0 +1,75 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="1F128242-BA4F-EF4F-C511-F8186D55C589" name="Airlines">
+<createdBy>todor</createdBy>
+<createdTime>2023-04-27 15:11:31 UTC</createdTime>
+<generatorID>40E1A53F-E256-1F91-36A3-94E304801132</generatorID>
+<ownerDesignName>DBModel</ownerDesignName>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="id" id="1D3B6265-BBAF-87CE-7EF1-C7616E9C3BC6">
+<createdBy>todor</createdBy>
+<createdTime>2023-04-27 15:11:31 UTC</createdTime>
+<generatorID>10F5D7A6-C194-4234-FE6B-2E4C8F2FB47C</generatorID>
+<ownerDesignName>DBModel</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="name" id="7BB89928-016D-125D-6B16-59AA99D92249">
+<createdBy>todor</createdBy>
+<createdTime>2023-04-27 15:11:31 UTC</createdTime>
+<generatorID>0F74D103-F48C-2839-29F8-57BFFEF135E6</generatorID>
+<ownerDesignName>DBModel</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT040</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="country_id" id="EB85DB87-2380-F581-528C-4747C2CB9D05">
+<createdBy>todor</createdBy>
+<createdTime>2023-04-27 15:11:31 UTC</createdTime>
+<generatorID>9DB3964D-2A3D-F188-E5EE-0F33B47E6AAA</generatorID>
+<ownerDesignName>DBModel</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="939C692E-51E5-309D-E7A0-60C4E51ED41B" referredColumn="79BE9E81-D888-5250-8CAF-3BE5E386F2BB"/>
+</associations>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="9E094C69-161A-32EC-35B2-24E13A357027" name="Airlines_PK">
+<createdBy>todor</createdBy>
+<createdTime>2023-04-27 15:11:31 UTC</createdTime>
+<generatorID>8AB534B8-38DB-63D2-55BF-05077B28B0F2</generatorID>
+<ownerDesignName>DBModel</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="1D3B6265-BBAF-87CE-7EF1-C7616E9C3BC6"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="C02DA501-7BE9-9789-44C4-75F1C8F95FD6" name="Airlines_Countries_FK">
+<createdBy>todor</createdBy>
+<createdTime>2023-04-27 15:11:31 UTC</createdTime>
+<generatorID>D308DA9F-2F86-BA90-3807-32A3D47AA0CD</generatorID>
+<ownerDesignName>DBModel</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="EB85DB87-2380-F581-528C-4747C2CB9D05"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

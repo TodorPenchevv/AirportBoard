@@ -1,0 +1,58 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Entity class="oracle.dbtools.crest.model.design.logical.Entity" directorySegmentName="seg_0" id="741A9F27-125E-8255-AECD-937CFDEC9A0F" name="Countries">
+<createdBy>todor</createdBy>
+<createdTime>2023-04-27 15:00:50 UTC</createdTime>
+<ownerDesignName>DBModel</ownerDesignName>
+<engineerTo>
+<item key="64CF4368-C27A-C8BD-8136-FFA56FA26E72" value="true"/>
+</engineerTo>
+<adequatelyNormalized>NO</adequatelyNormalized>
+<expectedVolumes>0</expectedVolumes>
+<fwdEngineeringStrategyName>Single Table</fwdEngineeringStrategyName>
+<growthPercent>0</growthPercent>
+<growthType>Year</growthType>
+<maxVolumes>9999999</maxVolumes>
+<minVolumes>0</minVolumes>
+<normalForm>Third</normalForm>
+<attributes itemClass="oracle.dbtools.crest.model.design.logical.Attribute">
+<Attribute name="id" id="07C6159E-3DD5-2249-365F-BCB7F7342F69">
+<createdBy>todor</createdBy>
+<createdTime>2023-04-27 15:00:59 UTC</createdTime>
+<ownerDesignName>DBModel</ownerDesignName>
+<engineerTo>
+<item key="64CF4368-C27A-C8BD-8136-FFA56FA26E72" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="name" id="1BE30C74-678D-F472-3137-51B9ACD0AB67">
+<createdBy>todor</createdBy>
+<createdTime>2023-04-27 15:01:00 UTC</createdTime>
+<ownerDesignName>DBModel</ownerDesignName>
+<engineerTo>
+<item key="64CF4368-C27A-C8BD-8136-FFA56FA26E72" value="true"/>
+</engineerTo>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT040</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+</attributes>
+<identifiers itemClass="oracle.dbtools.crest.model.design.logical.CandidateKey">
+<identifier id="00FBF71C-009E-9454-628E-EE9B497CA734" name="Countries PK">
+<createdBy>todor</createdBy>
+<createdTime>2023-04-27 15:01:35 UTC</createdTime>
+<ownerDesignName>DBModel</ownerDesignName>
+<engineerTo>
+<item key="64CF4368-C27A-C8BD-8136-FFA56FA26E72" value="true"/>
+</engineerTo>
+<pk>true</pk>
+<usedAttributes>
+<attributeRef>07C6159E-3DD5-2249-365F-BCB7F7342F69</attributeRef>
+</usedAttributes>
+</identifier>
+</identifiers>
+</Entity>

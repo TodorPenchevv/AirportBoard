@@ -1,0 +1,85 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Entity class="oracle.dbtools.crest.model.design.logical.Entity" directorySegmentName="seg_0" id="F7EDC836-A9E2-F768-4002-EA4AA48B825E" name="Destinations">
+<createdBy>todor</createdBy>
+<createdTime>2023-04-26 08:52:51 UTC</createdTime>
+<ownerDesignName>DBModel</ownerDesignName>
+<engineerTo>
+<item key="64CF4368-C27A-C8BD-8136-FFA56FA26E72" value="true"/>
+</engineerTo>
+<adequatelyNormalized>NO</adequatelyNormalized>
+<expectedVolumes>0</expectedVolumes>
+<fwdEngineeringStrategyName>Single Table</fwdEngineeringStrategyName>
+<growthPercent>0</growthPercent>
+<growthType>Year</growthType>
+<maxVolumes>9999999</maxVolumes>
+<minVolumes>0</minVolumes>
+<normalForm>Third</normalForm>
+<attributes itemClass="oracle.dbtools.crest.model.design.logical.Attribute">
+<Attribute name="id" id="90EFC1E2-D70C-9921-0955-9D225D57C4B8">
+<createdBy>todor</createdBy>
+<createdTime>2023-04-26 08:52:58 UTC</createdTime>
+<ownerDesignName>DBModel</ownerDesignName>
+<engineerTo>
+<item key="64CF4368-C27A-C8BD-8136-FFA56FA26E72" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="airport" id="6CB31813-91D9-E297-0496-E104874984ED">
+<createdBy>todor</createdBy>
+<createdTime>2023-04-26 08:53:25 UTC</createdTime>
+<ownerDesignName>DBModel</ownerDesignName>
+<engineerTo>
+<item key="64CF4368-C27A-C8BD-8136-FFA56FA26E72" value="true"/>
+</engineerTo>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT040</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="city_id" id="6E11E32E-2872-CB44-0B72-0EA0BC5CC0A6">
+<createdBy>todor</createdBy>
+<createdTime>2023-04-26 08:53:47 UTC</createdTime>
+<ownerDesignName>DBModel</ownerDesignName>
+<engineerTo>
+<item key="64CF4368-C27A-C8BD-8136-FFA56FA26E72" value="true"/>
+</engineerTo>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="id1" id="6A2C867A-A977-FFA0-E634-86028BD7A910">
+<createdBy>todor</createdBy>
+<createdTime>2023-04-27 15:05:30 UTC</createdTime>
+<generatorID>39902552-FCA9-9B71-6541-58ACF4EF4C1F</generatorID>
+<ownerDesignName>DBModel</ownerDesignName>
+<engineerTo>
+<item key="64CF4368-C27A-C8BD-8136-FFA56FA26E72" value="true"/>
+</engineerTo>
+<referedAttribute>559860D5-7975-A66C-22E6-268CFAD50726</referedAttribute>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+</attributes>
+<identifiers itemClass="oracle.dbtools.crest.model.design.logical.CandidateKey">
+<identifier id="24CB3B30-079F-C584-176C-BA16C9DE3AA1" name="Destinations PK">
+<createdBy>todor</createdBy>
+<createdTime>2023-04-26 08:53:07 UTC</createdTime>
+<ownerDesignName>DBModel</ownerDesignName>
+<engineerTo>
+<item key="64CF4368-C27A-C8BD-8136-FFA56FA26E72" value="true"/>
+</engineerTo>
+<pk>true</pk>
+<usedAttributes>
+<attributeRef>90EFC1E2-D70C-9921-0955-9D225D57C4B8</attributeRef>
+</usedAttributes>
+</identifier>
+</identifiers>
+</Entity>

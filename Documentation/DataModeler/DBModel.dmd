@@ -1,0 +1,8 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<OSDM_Design class="oracle.dbtools.crest.model.design.Design" name="DBModel" id="B8B12507-3F5F-4D98-4EC1-AC169A69D8C3" version="3.5">
+<createdBy>todor</createdBy>
+<createdTime>2023-04-26 08:42:33 UTC</createdTime>
+<ownerDesignName>DBModel</ownerDesignName>
+<capitalNames>false</capitalNames>
+<designId>B8B12507-3F5F-4D98-4EC1-AC169A69D8C3</designId>
+</OSDM_Design>

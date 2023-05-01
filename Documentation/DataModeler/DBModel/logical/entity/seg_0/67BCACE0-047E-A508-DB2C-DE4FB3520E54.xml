@@ -1,0 +1,58 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Entity class="oracle.dbtools.crest.model.design.logical.Entity" directorySegmentName="seg_0" id="67BCACE0-047E-A508-DB2C-DE4FB3520E54" name="Flight Status">
+<createdBy>todor</createdBy>
+<createdTime>2023-04-27 15:02:34 UTC</createdTime>
+<ownerDesignName>DBModel</ownerDesignName>
+<engineerTo>
+<item key="64CF4368-C27A-C8BD-8136-FFA56FA26E72" value="true"/>
+</engineerTo>
+<adequatelyNormalized>NO</adequatelyNormalized>
+<expectedVolumes>0</expectedVolumes>
+<fwdEngineeringStrategyName>Single Table</fwdEngineeringStrategyName>
+<growthPercent>0</growthPercent>
+<growthType>Year</growthType>
+<maxVolumes>9999999</maxVolumes>
+<minVolumes>0</minVolumes>
+<normalForm>Third</normalForm>
+<attributes itemClass="oracle.dbtools.crest.model.design.logical.Attribute">
+<Attribute name="id" id="55B11E42-8373-4DF2-141E-49C409A6233B">
+<createdBy>todor</createdBy>
+<createdTime>2023-04-27 15:02:46 UTC</createdTime>
+<ownerDesignName>DBModel</ownerDesignName>
+<engineerTo>
+<item key="64CF4368-C27A-C8BD-8136-FFA56FA26E72" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="status" id="92EC6F69-A462-D1FD-6733-3AEB522A7131">
+<createdBy>todor</createdBy>
+<createdTime>2023-04-27 15:02:46 UTC</createdTime>
+<ownerDesignName>DBModel</ownerDesignName>
+<engineerTo>
+<item key="64CF4368-C27A-C8BD-8136-FFA56FA26E72" value="true"/>
+</engineerTo>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT040</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+</attributes>
+<identifiers itemClass="oracle.dbtools.crest.model.design.logical.CandidateKey">
+<identifier id="05841D0B-CE61-4EAA-32B1-FCF4C1A6B0FC" name="Flight Status PK">
+<createdBy>todor</createdBy>
+<createdTime>2023-04-27 15:03:00 UTC</createdTime>
+<ownerDesignName>DBModel</ownerDesignName>
+<engineerTo>
+<item key="64CF4368-C27A-C8BD-8136-FFA56FA26E72" value="true"/>
+</engineerTo>
+<pk>true</pk>
+<usedAttributes>
+<attributeRef>55B11E42-8373-4DF2-141E-49C409A6233B</attributeRef>
+</usedAttributes>
+</identifier>
+</identifiers>
+</Entity>

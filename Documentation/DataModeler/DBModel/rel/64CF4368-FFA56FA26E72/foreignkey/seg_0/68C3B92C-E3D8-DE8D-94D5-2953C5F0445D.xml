@@ -1,0 +1,17 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<FKIndexAssociation class="oracle.dbtools.crest.model.design.relational.FKIndexAssociation" directorySegmentName="seg_0" id="68C3B92C-E3D8-DE8D-94D5-2953C5F0445D" containerWithKeyObject="EE646136-6C0A-C1C3-B50C-9A2FB8200B71" localFKIndex="03560197-3BDC-13D1-DFB6-3A22408BF12C" name="Flights_Gates_FK">
+<createdBy>todor</createdBy>
+<createdTime>2023-04-27 15:11:31 UTC</createdTime>
+<generatorID>A38BD4D8-6540-9984-78D3-0DC51E325752</generatorID>
+<ownerDesignName>DBModel</ownerDesignName>
+<referredTableLongName>Gates</referredTableLongName>
+<deleteRule>NO ACTION</deleteRule>
+<referredTableID>84BAEAFA-BE81-5BA0-5B59-B369C0325B5B</referredTableID>
+<keyObject>75B84500-8C0D-683E-91EE-C4CDA58A7499</keyObject>
+<referredKeyID>75B84500-8C0D-683E-91EE-C4CDA58A7499</referredKeyID>
+<mandatory>true</mandatory>
+<refColNames>id</refColNames>
+<transferable>true</transferable>
+<rely>false</rely>
+<columnDependencyConstraintGenerateInDDL>true</columnDependencyConstraintGenerateInDDL>
+</FKIndexAssociation>

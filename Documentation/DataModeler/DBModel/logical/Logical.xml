@@ -1,0 +1,7 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<LogicalDesign class="oracle.dbtools.crest.model.design.logical.LogicalDesign" name="Logical" id="949071E8-392E-4F26-77B2-6F4912651BA7" mainViewID="E7336425-B69D-9FDF-4DBB-84F818671354">
+<createdBy>todor</createdBy>
+<createdTime>2023-04-26 08:42:33 UTC</createdTime>
+<ownerDesignName>DBModel</ownerDesignName>
+<shouldBeOpen>false</shouldBeOpen>
+</LogicalDesign>

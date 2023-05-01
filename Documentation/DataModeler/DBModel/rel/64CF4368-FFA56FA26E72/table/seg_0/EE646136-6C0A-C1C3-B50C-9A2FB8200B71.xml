@@ -1,0 +1,154 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="EE646136-6C0A-C1C3-B50C-9A2FB8200B71" name="Flights">
+<createdBy>todor</createdBy>
+<createdTime>2023-04-27 15:11:31 UTC</createdTime>
+<generatorID>D26186D6-8E1E-785B-12B6-325FE2F2A704</generatorID>
+<ownerDesignName>DBModel</ownerDesignName>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="id" id="7BF22F35-A03B-6032-9ADE-492CE7DA131B">
+<createdBy>todor</createdBy>
+<createdTime>2023-04-27 15:11:31 UTC</createdTime>
+<generatorID>8BB399A2-FF7E-C817-6DFB-A578A3A41B5C</generatorID>
+<ownerDesignName>DBModel</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="from_destination_id" id="E60015D1-CC78-9652-13A9-A367AB96B504">
+<createdBy>todor</createdBy>
+<createdTime>2023-04-27 15:19:00 UTC</createdTime>
+<generatorID>263160AB-004A-3448-26AA-742941C5FAF7</generatorID>
+<ownerDesignName>DBModel</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="to_destination_id" id="D02A7E23-01D1-453B-FE86-30D413E0BE9B">
+<createdBy>todor</createdBy>
+<createdTime>2023-04-27 15:11:31 UTC</createdTime>
+<generatorID>263160AB-004A-3448-26AA-742941C5FAF7</generatorID>
+<ownerDesignName>DBModel</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="9EF71E74-5046-5BF4-5E07-AE1A6F129A00" referredColumn="EF21AA66-40DD-8105-9C8D-0D3B1BA8F9BB"/>
+</associations>
+</Column>
+<Column name="airline_id" id="B27829A1-F4C9-9595-888C-8D8D95947D34">
+<createdBy>todor</createdBy>
+<createdTime>2023-04-27 15:11:31 UTC</createdTime>
+<generatorID>660969E6-341E-C3B0-0DA4-F8182AA84CF9</generatorID>
+<ownerDesignName>DBModel</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="EFDCB093-C59C-888E-5883-E33B2CEE3357" referredColumn="1D3B6265-BBAF-87CE-7EF1-C7616E9C3BC6"/>
+</associations>
+</Column>
+<Column name="status_id" id="46ECDA6A-7311-B61A-3FD5-49338852F426">
+<createdBy>todor</createdBy>
+<createdTime>2023-04-27 15:11:31 UTC</createdTime>
+<generatorID>B3BC2E4A-9561-03CE-2D9C-8890279BF1DA</generatorID>
+<ownerDesignName>DBModel</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="F14894BB-1423-E519-46C0-69640219E055" referredColumn="DAE01C3F-AC15-BA2C-8811-CEB382CF898A"/>
+</associations>
+</Column>
+<Column name="gate_id" id="0730A48A-4B05-E1B8-0AB5-BAF9C21D4255">
+<createdBy>todor</createdBy>
+<createdTime>2023-04-27 15:11:31 UTC</createdTime>
+<generatorID>A59BB159-3E24-24A4-F639-0EF9A688A779</generatorID>
+<ownerDesignName>DBModel</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="68C3B92C-E3D8-DE8D-94D5-2953C5F0445D" referredColumn="A6305E26-1C0B-4741-F388-FF558ACC8157"/>
+</associations>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="AE3D9E2F-9D58-C05A-BBEE-2D1C54EE1B16" name="Flights_PK">
+<createdBy>todor</createdBy>
+<createdTime>2023-04-27 15:11:31 UTC</createdTime>
+<generatorID>EB0D142F-B2F1-F21A-6E69-D2C4854BEB66</generatorID>
+<ownerDesignName>DBModel</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="7BF22F35-A03B-6032-9ADE-492CE7DA131B"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="ABCFA20B-6C02-6E74-0FA0-895805AA42C2" name="Flights_Airlines_FK">
+<createdBy>todor</createdBy>
+<createdTime>2023-04-27 15:11:31 UTC</createdTime>
+<generatorID>64E5C0B3-17B1-BDFC-4C4D-22463ADF02F2</generatorID>
+<ownerDesignName>DBModel</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="B27829A1-F4C9-9595-888C-8D8D95947D34"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="4F0D61B5-DF68-7CD3-8E9A-5F56FEE6DBF3" name="Flights_Flight_Status_FK">
+<createdBy>todor</createdBy>
+<createdTime>2023-04-27 15:11:31 UTC</createdTime>
+<generatorID>7A9B91B0-47C6-5C92-9650-A5331108B1B8</generatorID>
+<ownerDesignName>DBModel</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="46ECDA6A-7311-B61A-3FD5-49338852F426"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="03560197-3BDC-13D1-DFB6-3A22408BF12C" name="Flights_Gates_FK">
+<createdBy>todor</createdBy>
+<createdTime>2023-04-27 15:11:31 UTC</createdTime>
+<generatorID>A38BD4D8-6540-9984-78D3-0DC51E325752</generatorID>
+<ownerDesignName>DBModel</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="0730A48A-4B05-E1B8-0AB5-BAF9C21D4255"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="BE978533-36A8-26B5-86BF-5ECFA948D115" name="Flights_Destinations_FK">
+<createdBy>todor</createdBy>
+<createdTime>2023-04-27 15:11:31 UTC</createdTime>
+<generatorID>9C98E1FD-54CE-A8AC-586D-1A19C5F44C49</generatorID>
+<ownerDesignName>DBModel</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="D02A7E23-01D1-453B-FE86-30D413E0BE9B"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

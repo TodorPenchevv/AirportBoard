@@ -18,24 +18,14 @@ namespace AirportBoard.Models
 
         public override void save()
         {
-            string[,] queryParams = new string[,]
-            {
-                {
-                    "tableName", getTableName()
-                },
-                {
-                    "status", getStatus()
-                },
-            };
-
-            string query = "INSERT INTO @tableName(status) VALUES(@status)";
+            string query = String.Format("INSERT INTO {0}(status) VALUES('{1}')", tableName, status);
 
             runQuery(query);
         }
 
         public override void update()
         {
-            string query = "UPDATE '" + getTableName() + "' SET status='" + getStatus() + "' WHERE ID=" + getId();
+            string query = String.Format("UPDATE {0} SET status='{1}' WHERE ID={2}", tableName, status, id);
 
             runQuery(query);
         }
@@ -43,6 +33,11 @@ namespace AirportBoard.Models
         public override string getId()
         {
             return id;
+        }
+
+        public void setId(string id)
+        {
+            this.id = id;
         }
 
         public void setStatus(string status)

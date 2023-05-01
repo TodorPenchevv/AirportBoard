@@ -19,27 +19,14 @@ namespace AirportBoard.Models
 
         public override void save()
         {
-            string[,] queryParams = new string[,]
-            {
-                {
-                    "tableName", getTableName()
-                },
-                {
-                    "zone", getZone()
-                },
-                {
-                    "number", getNumber()
-                },
-            };
-
-            string query = "INSERT INTO @tableName(zone, number) VALUES(@zone, @number)";
+            string query = String.Format("INSERT INTO {0}(zone, gate_number) VALUES('{1}', {2})", tableName, zone, number);
 
             runQuery(query);
         }
 
         public override void update()
         {
-            string query = "UPDATE '" + getTableName() + "' SET zone='" + getZone() + "', number='" + getNumber() + "' WHERE ID=" + getId();
+            string query = String.Format("UPDATE {0} SET zone='{1}', gate_number={2} WHERE ID={3}", tableName, zone, number, id);
 
             runQuery(query);
         }
@@ -47,6 +34,11 @@ namespace AirportBoard.Models
         public override string getId()
         {
             return id;
+        }
+
+        public void setId(string id)
+        {
+            this.id = id;
         }
 
         public void setZone(string zone)

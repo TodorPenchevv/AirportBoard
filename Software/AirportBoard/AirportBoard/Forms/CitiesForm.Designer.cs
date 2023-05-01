@@ -33,10 +33,13 @@
             this.addCity = new System.Windows.Forms.Button();
             this.label9 = new System.Windows.Forms.Label();
             this.cityNameTextBox = new System.Windows.Forms.TextBox();
-            this.cityCoutnryComboBox = new System.Windows.Forms.ComboBox();
+            this.cityCountryComboBox = new System.Windows.Forms.ComboBox();
             this.label10 = new System.Windows.Forms.Label();
-            this.dataGridView3 = new System.Windows.Forms.DataGridView();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView3)).BeginInit();
+            this.citiesGridView = new System.Windows.Forms.DataGridView();
+            this.cityIdColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.cityNameColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.cityCountryColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            ((System.ComponentModel.ISupportInitialize)(this.citiesGridView)).BeginInit();
             this.SuspendLayout();
             // 
             // deleteCity
@@ -48,6 +51,7 @@
             this.deleteCity.TabIndex = 35;
             this.deleteCity.Text = "Delete";
             this.deleteCity.UseVisualStyleBackColor = true;
+            this.deleteCity.Click += new System.EventHandler(this.deleteCity_Click);
             // 
             // updateCity
             // 
@@ -58,6 +62,7 @@
             this.updateCity.TabIndex = 34;
             this.updateCity.Text = "Update";
             this.updateCity.UseVisualStyleBackColor = true;
+            this.updateCity.Click += new System.EventHandler(this.updateCity_Click);
             // 
             // addCity
             // 
@@ -68,6 +73,7 @@
             this.addCity.TabIndex = 33;
             this.addCity.Text = "Add";
             this.addCity.UseVisualStyleBackColor = true;
+            this.addCity.Click += new System.EventHandler(this.addCity_Click);
             // 
             // label9
             // 
@@ -87,14 +93,14 @@
             this.cityNameTextBox.Size = new System.Drawing.Size(199, 27);
             this.cityNameTextBox.TabIndex = 31;
             // 
-            // cityCoutnryComboBox
+            // cityCountryComboBox
             // 
-            this.cityCoutnryComboBox.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.cityCoutnryComboBox.FormattingEnabled = true;
-            this.cityCoutnryComboBox.Location = new System.Drawing.Point(867, 99);
-            this.cityCoutnryComboBox.Name = "cityCoutnryComboBox";
-            this.cityCoutnryComboBox.Size = new System.Drawing.Size(201, 28);
-            this.cityCoutnryComboBox.TabIndex = 30;
+            this.cityCountryComboBox.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.cityCountryComboBox.FormattingEnabled = true;
+            this.cityCountryComboBox.Location = new System.Drawing.Point(867, 99);
+            this.cityCountryComboBox.Name = "cityCountryComboBox";
+            this.cityCountryComboBox.Size = new System.Drawing.Size(201, 28);
+            this.cityCountryComboBox.TabIndex = 30;
             // 
             // label10
             // 
@@ -106,14 +112,36 @@
             this.label10.TabIndex = 29;
             this.label10.Text = "City";
             // 
-            // dataGridView3
+            // citiesGridView
             // 
-            this.dataGridView3.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView3.Location = new System.Drawing.Point(12, 12);
-            this.dataGridView3.Name = "dataGridView3";
-            this.dataGridView3.RowTemplate.Height = 25;
-            this.dataGridView3.Size = new System.Drawing.Size(849, 562);
-            this.dataGridView3.TabIndex = 28;
+            this.citiesGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.citiesGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.cityIdColumn,
+            this.cityNameColumn,
+            this.cityCountryColumn});
+            this.citiesGridView.Location = new System.Drawing.Point(12, 12);
+            this.citiesGridView.Name = "citiesGridView";
+            this.citiesGridView.RowTemplate.Height = 25;
+            this.citiesGridView.Size = new System.Drawing.Size(849, 562);
+            this.citiesGridView.TabIndex = 28;
+            // 
+            // cityIdColumn
+            // 
+            this.cityIdColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.cityIdColumn.HeaderText = "ID";
+            this.cityIdColumn.Name = "cityIdColumn";
+            // 
+            // cityNameColumn
+            // 
+            this.cityNameColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.cityNameColumn.HeaderText = "CITY";
+            this.cityNameColumn.Name = "cityNameColumn";
+            // 
+            // cityCountryColumn
+            // 
+            this.cityCountryColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.cityCountryColumn.HeaderText = "COUNTRY";
+            this.cityCountryColumn.Name = "cityCountryColumn";
             // 
             // CitiesForm
             // 
@@ -125,12 +153,13 @@
             this.Controls.Add(this.addCity);
             this.Controls.Add(this.label9);
             this.Controls.Add(this.cityNameTextBox);
-            this.Controls.Add(this.cityCoutnryComboBox);
+            this.Controls.Add(this.cityCountryComboBox);
             this.Controls.Add(this.label10);
-            this.Controls.Add(this.dataGridView3);
+            this.Controls.Add(this.citiesGridView);
             this.Name = "CitiesForm";
             this.Text = "CitiesForm";
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView3)).EndInit();
+            this.Load += new System.EventHandler(this.CitiesForm_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.citiesGridView)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -143,8 +172,11 @@
         private Button addCity;
         private Label label9;
         private TextBox cityNameTextBox;
-        private ComboBox cityCoutnryComboBox;
+        private ComboBox cityCountryComboBox;
         private Label label10;
-        private DataGridView dataGridView3;
+        private DataGridView citiesGridView;
+        private DataGridViewTextBoxColumn cityIdColumn;
+        private DataGridViewTextBoxColumn cityNameColumn;
+        private DataGridViewTextBoxColumn cityCountryColumn;
     }
 }

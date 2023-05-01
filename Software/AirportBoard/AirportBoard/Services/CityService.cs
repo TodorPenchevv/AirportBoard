@@ -1,24 +1,25 @@
 ﻿using AirportBoard.Exceptions;
+using AirportBoard.Logging;
 using AirportBoard.Models;
 
 namespace AirportBoard.Services
 {
-    internal class CityService : ServiceInterface
+    internal class CityService : Service
     {
         private string id;
         private string name;
         private string countryId;
 
-        public CityService()
+        public CityService() {}
+
+        public override void setFields(Dictionary<string, string> values)
         {
-            getFields();
+            id = valueContains(values, "id");
+            name = valueContains(values, "name");
+            countryId = valueContains(values, "countryId");
         }
 
-        public void getFields()
-        {
-        }
-
-        public void save()
+        public override void save()
         {
             try
             {
@@ -29,11 +30,11 @@ namespace AirportBoard.Services
             }
             catch (Exception e)
             {
-                throw new InsertException();
+                Notification.show("Error", e.Message);
             }
         }
 
-        public void update()
+        public override void update()
         {
             try
             {
@@ -45,11 +46,11 @@ namespace AirportBoard.Services
             }
             catch (Exception e)
             {
-                throw new UpdateException();
+                Notification.show("Error", e.Message);
             }
         }
 
-        public void delete()
+        public override void delete()
         {
             try
             {
@@ -59,7 +60,7 @@ namespace AirportBoard.Services
             }
             catch (Exception e)
             {
-                throw new DeleteException();
+                Notification.show("Error", e.Message);
             }
         }
     }

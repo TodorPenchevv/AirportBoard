@@ -40,12 +40,12 @@ namespace AirportBoard.Models
             OleDbCommand dbCmd = new OleDbCommand(query, dbConnect);
 
             dbConnect.Open();
-            MessageBox.Show(query);
+            //MessageBox.Show(query);
             dbCmd.ExecuteNonQuery();
             dbConnect.Close();
         }
 
-        protected List<List<string>> getAll()
+        public List<List<string>> getAll()
         {
             string query = String.Format("SELECT * FROM {0}", tableName);
             return runSelect(query);

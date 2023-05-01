@@ -1,4 +1,5 @@
 ﻿using AirportBoard.Exceptions;
+using AirportBoard.Logging;
 using AirportBoard.Models;
 using System;
 using System.Collections.Generic;
@@ -8,21 +9,20 @@ using System.Threading.Tasks;
 
 namespace AirportBoard.Services
 {
-    internal class CountryService : ServiceInterface
+    internal class CountryService : Service
     {
-        private string id;
-        private string name;
+        private string? id;
+        private string? name;
 
-        public CountryService()
+        public CountryService() {}
+
+        public override void setFields(Dictionary<string, string> values)
         {
-            getFields();
+            id = valueContains(values, "id");
+            name = valueContains(values, "name");
         }
 
-        public void getFields()
-        {
-        }
-
-        public void save()
+        public override void save()
         {
             try
             {
@@ -32,11 +32,11 @@ namespace AirportBoard.Services
             }
             catch (Exception e)
             {
-                throw new InsertException();
+                Notification.show("Error", e.Message);
             }
         }
 
-        public void update()
+        public override void update()
         {
             try
             {
@@ -47,11 +47,11 @@ namespace AirportBoard.Services
             }
             catch (Exception e)
             {
-                throw new UpdateException();
+                Notification.show("Error", e.Message);
             }
         }
 
-        public void delete()
+        public override void delete()
         {
             try
             {
@@ -61,7 +61,7 @@ namespace AirportBoard.Services
             }
             catch (Exception e)
             {
-                throw new DeleteException();
+                Notification.show("Error", e.Message);
             }
         }
     }

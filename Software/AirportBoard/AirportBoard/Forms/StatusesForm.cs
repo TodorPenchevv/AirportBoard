@@ -1,4 +1,4 @@
-﻿using AirportBoard.Models;
+﻿using AirportBoard.Services;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -13,6 +13,8 @@ namespace AirportBoard.Forms
 {
     public partial class StatusesForm : Form
     {
+        StatusService statusService = new StatusService();
+
         public StatusesForm()
         {
             InitializeComponent();
@@ -20,24 +22,17 @@ namespace AirportBoard.Forms
 
         private void addStatus_Click(object sender, EventArgs e)
         {
-            FlightStatus status = new FlightStatus();
-            status.setStatus("boarding");
-            status.save();
+            statusService.save();
         }
 
         private void updateStatus_Click(object sender, EventArgs e)
         {
-            FlightStatus status = new FlightStatus();
-            status.setId("1");
-            status.setStatus("Boarding");
-            status.update();
+            statusService.update();
         }
 
         private void deleteStatus_Click(object sender, EventArgs e)
         {
-            FlightStatus status = new FlightStatus();
-            status.setId("1");
-            status.delete();
+            statusService.delete();
         }
     }
 }

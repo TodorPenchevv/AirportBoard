@@ -35,8 +35,11 @@
             this.deleteDestination = new System.Windows.Forms.Button();
             this.updateDestination = new System.Windows.Forms.Button();
             this.addDestination = new System.Windows.Forms.Button();
-            this.dataGridView2 = new System.Windows.Forms.DataGridView();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
+            this.destinationsGridView = new System.Windows.Forms.DataGridView();
+            this.destinationIdColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.destinationAirportColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.destinationCityColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            ((System.ComponentModel.ISupportInitialize)(this.destinationsGridView)).BeginInit();
             this.SuspendLayout();
             // 
             // label8
@@ -106,14 +109,36 @@
             this.addDestination.Text = "Add";
             this.addDestination.UseVisualStyleBackColor = true;
             // 
-            // dataGridView2
+            // destinationsGridView
             // 
-            this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView2.Location = new System.Drawing.Point(12, 12);
-            this.dataGridView2.Name = "dataGridView2";
-            this.dataGridView2.RowTemplate.Height = 25;
-            this.dataGridView2.Size = new System.Drawing.Size(849, 562);
-            this.dataGridView2.TabIndex = 21;
+            this.destinationsGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.destinationsGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.destinationIdColumn,
+            this.destinationAirportColumn,
+            this.destinationCityColumn});
+            this.destinationsGridView.Location = new System.Drawing.Point(12, 12);
+            this.destinationsGridView.Name = "destinationsGridView";
+            this.destinationsGridView.RowTemplate.Height = 25;
+            this.destinationsGridView.Size = new System.Drawing.Size(849, 562);
+            this.destinationsGridView.TabIndex = 21;
+            // 
+            // destinationIdColumn
+            // 
+            this.destinationIdColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.destinationIdColumn.HeaderText = "ID";
+            this.destinationIdColumn.Name = "destinationIdColumn";
+            // 
+            // destinationAirportColumn
+            // 
+            this.destinationAirportColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.destinationAirportColumn.HeaderText = "AIRPORT";
+            this.destinationAirportColumn.Name = "destinationAirportColumn";
+            // 
+            // destinationCityColumn
+            // 
+            this.destinationCityColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.destinationCityColumn.HeaderText = "CITY";
+            this.destinationCityColumn.Name = "destinationCityColumn";
             // 
             // DestinationsForm
             // 
@@ -127,10 +152,10 @@
             this.Controls.Add(this.deleteDestination);
             this.Controls.Add(this.updateDestination);
             this.Controls.Add(this.addDestination);
-            this.Controls.Add(this.dataGridView2);
+            this.Controls.Add(this.destinationsGridView);
             this.Name = "DestinationsForm";
             this.Text = "DestinationsForm";
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.destinationsGridView)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -145,6 +170,9 @@
         private Button deleteDestination;
         private Button updateDestination;
         private Button addDestination;
-        private DataGridView dataGridView2;
+        private DataGridView destinationsGridView;
+        private DataGridViewTextBoxColumn destinationIdColumn;
+        private DataGridViewTextBoxColumn destinationAirportColumn;
+        private DataGridViewTextBoxColumn destinationCityColumn;
     }
 }

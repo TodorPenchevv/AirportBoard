@@ -1,31 +1,34 @@
 ﻿using AirportBoard.Logging;
 using AirportBoard.Models;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace AirportBoard.Services
 {
-    internal class DestinationService : Service
+    internal class StatusService : Service
     {
         private string id;
-        private string airport;
-        private string cityId;
+        private string statusName;
 
-        public DestinationService() {}
+        public StatusService() {}
 
         public override void setFields(Dictionary<string, string> values)
         {
             id = valueContains(values, "id");
-            airport = valueContains(values, "airport");
-            cityId = valueContains(values, "cityId");
+            statusName = valueContains(values, "statusName");
         }
 
         public override void save()
         {
             try
             {
-                Destination destination = new Destination();
-                destination.setAirport(airport);
-                destination.setCityId(cityId);
-                destination.save();
+                FlightStatus status = new FlightStatus();
+                status.setStatus(statusName);
+                status.save();
             }
             catch (Exception e)
             {
@@ -37,11 +40,10 @@ namespace AirportBoard.Services
         {
             try
             {
-                Destination destination = new Destination();
-                destination.setId(id);
-                destination.setAirport(airport);
-                destination.setCityId(cityId);
-                destination.update();
+                FlightStatus status = new FlightStatus();
+                status.setId(id);
+                status.setStatus(statusName);
+                status.update();
             }
             catch (Exception e)
             {
@@ -53,9 +55,9 @@ namespace AirportBoard.Services
         {
             try
             {
-                Destination destination = new Destination();
-                destination.setId(id);
-                destination.delete();
+                FlightStatus status = new FlightStatus();
+                status.setId(id);
+                status.delete();
             }
             catch (Exception e)
             {

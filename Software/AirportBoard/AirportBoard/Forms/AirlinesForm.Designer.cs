@@ -35,8 +35,11 @@
             this.airlineTextBox = new System.Windows.Forms.TextBox();
             this.airlineCountryComboBox = new System.Windows.Forms.ComboBox();
             this.label13 = new System.Windows.Forms.Label();
-            this.dataGridView5 = new System.Windows.Forms.DataGridView();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView5)).BeginInit();
+            this.airlinesGridView = new System.Windows.Forms.DataGridView();
+            this.airlineIdColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.airlineNameColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.airlineCountryColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            ((System.ComponentModel.ISupportInitialize)(this.airlinesGridView)).BeginInit();
             this.SuspendLayout();
             // 
             // deleteAirline
@@ -106,14 +109,36 @@
             this.label13.TabIndex = 35;
             this.label13.Text = "Airline Name";
             // 
-            // dataGridView5
+            // airlinesGridView
             // 
-            this.dataGridView5.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView5.Location = new System.Drawing.Point(12, 12);
-            this.dataGridView5.Name = "dataGridView5";
-            this.dataGridView5.RowTemplate.Height = 25;
-            this.dataGridView5.Size = new System.Drawing.Size(849, 562);
-            this.dataGridView5.TabIndex = 34;
+            this.airlinesGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.airlinesGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.airlineIdColumn,
+            this.airlineNameColumn,
+            this.airlineCountryColumn});
+            this.airlinesGridView.Location = new System.Drawing.Point(12, 12);
+            this.airlinesGridView.Name = "airlinesGridView";
+            this.airlinesGridView.RowTemplate.Height = 25;
+            this.airlinesGridView.Size = new System.Drawing.Size(849, 562);
+            this.airlinesGridView.TabIndex = 34;
+            // 
+            // airlineIdColumn
+            // 
+            this.airlineIdColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.airlineIdColumn.HeaderText = "ID";
+            this.airlineIdColumn.Name = "airlineIdColumn";
+            // 
+            // airlineNameColumn
+            // 
+            this.airlineNameColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.airlineNameColumn.HeaderText = "NAME";
+            this.airlineNameColumn.Name = "airlineNameColumn";
+            // 
+            // airlineCountryColumn
+            // 
+            this.airlineCountryColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.airlineCountryColumn.HeaderText = "COUNTRY";
+            this.airlineCountryColumn.Name = "airlineCountryColumn";
             // 
             // AirlinesForm
             // 
@@ -127,10 +152,10 @@
             this.Controls.Add(this.airlineTextBox);
             this.Controls.Add(this.airlineCountryComboBox);
             this.Controls.Add(this.label13);
-            this.Controls.Add(this.dataGridView5);
+            this.Controls.Add(this.airlinesGridView);
             this.Name = "AirlinesForm";
             this.Text = "AirlinesForm";
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView5)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.airlinesGridView)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -145,6 +170,9 @@
         private TextBox airlineTextBox;
         private ComboBox airlineCountryComboBox;
         private Label label13;
-        private DataGridView dataGridView5;
+        private DataGridView airlinesGridView;
+        private DataGridViewTextBoxColumn airlineIdColumn;
+        private DataGridViewTextBoxColumn airlineNameColumn;
+        private DataGridViewTextBoxColumn airlineCountryColumn;
     }
 }

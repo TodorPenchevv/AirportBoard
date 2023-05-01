@@ -33,8 +33,10 @@
             this.addCountry = new System.Windows.Forms.Button();
             this.countryTextBox = new System.Windows.Forms.TextBox();
             this.label11 = new System.Windows.Forms.Label();
-            this.dataGridView4 = new System.Windows.Forms.DataGridView();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView4)).BeginInit();
+            this.countriesGridView = new System.Windows.Forms.DataGridView();
+            this.countryIdColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.countryNameColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            ((System.ComponentModel.ISupportInitialize)(this.countriesGridView)).BeginInit();
             this.SuspendLayout();
             // 
             // deleteCountry
@@ -46,6 +48,7 @@
             this.deleteCountry.TabIndex = 36;
             this.deleteCountry.Text = "Delete";
             this.deleteCountry.UseVisualStyleBackColor = true;
+            this.deleteCountry.Click += new System.EventHandler(this.deleteCountry_Click);
             // 
             // updateCountry
             // 
@@ -56,6 +59,7 @@
             this.updateCountry.TabIndex = 35;
             this.updateCountry.Text = "Update";
             this.updateCountry.UseVisualStyleBackColor = true;
+            this.updateCountry.Click += new System.EventHandler(this.updateCountry_Click);
             // 
             // addCountry
             // 
@@ -66,6 +70,7 @@
             this.addCountry.TabIndex = 34;
             this.addCountry.Text = "Add";
             this.addCountry.UseVisualStyleBackColor = true;
+            this.addCountry.Click += new System.EventHandler(this.addCountry_Click);
             // 
             // countryTextBox
             // 
@@ -85,14 +90,29 @@
             this.label11.TabIndex = 32;
             this.label11.Text = "Country";
             // 
-            // dataGridView4
+            // countriesGridView
             // 
-            this.dataGridView4.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView4.Location = new System.Drawing.Point(12, 12);
-            this.dataGridView4.Name = "dataGridView4";
-            this.dataGridView4.RowTemplate.Height = 25;
-            this.dataGridView4.Size = new System.Drawing.Size(849, 562);
-            this.dataGridView4.TabIndex = 31;
+            this.countriesGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.countriesGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.countryIdColumn,
+            this.countryNameColumn});
+            this.countriesGridView.Location = new System.Drawing.Point(12, 12);
+            this.countriesGridView.Name = "countriesGridView";
+            this.countriesGridView.RowTemplate.Height = 25;
+            this.countriesGridView.Size = new System.Drawing.Size(849, 562);
+            this.countriesGridView.TabIndex = 31;
+            // 
+            // countryIdColumn
+            // 
+            this.countryIdColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.countryIdColumn.HeaderText = "ID";
+            this.countryIdColumn.Name = "countryIdColumn";
+            // 
+            // countryNameColumn
+            // 
+            this.countryNameColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.countryNameColumn.HeaderText = "COUNTRY";
+            this.countryNameColumn.Name = "countryNameColumn";
             // 
             // CountriesForm
             // 
@@ -104,10 +124,11 @@
             this.Controls.Add(this.addCountry);
             this.Controls.Add(this.countryTextBox);
             this.Controls.Add(this.label11);
-            this.Controls.Add(this.dataGridView4);
+            this.Controls.Add(this.countriesGridView);
             this.Name = "CountriesForm";
             this.Text = "CountriesForm";
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView4)).EndInit();
+            this.Load += new System.EventHandler(this.CountriesForm_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.countriesGridView)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -120,6 +141,8 @@
         private Button addCountry;
         private TextBox countryTextBox;
         private Label label11;
-        private DataGridView dataGridView4;
+        private DataGridView countriesGridView;
+        private DataGridViewTextBoxColumn countryIdColumn;
+        private DataGridViewTextBoxColumn countryNameColumn;
     }
 }

@@ -43,8 +43,15 @@
             this.label2 = new System.Windows.Forms.Label();
             this.gateComboBox = new System.Windows.Forms.ComboBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            this.flightsGridView = new System.Windows.Forms.DataGridView();
+            this.flightIdColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.flightGateColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.flightToDestinationColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.flightFromDestinationColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.flightAirlineColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.flightStatusColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.flightTimeColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            ((System.ComponentModel.ISupportInitialize)(this.flightsGridView)).BeginInit();
             this.SuspendLayout();
             // 
             // flightDateTimePicker
@@ -184,14 +191,65 @@
             this.label1.TabIndex = 17;
             this.label1.Text = "Gate";
             // 
-            // dataGridView1
+            // flightsGridView
             // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(12, 12);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.RowTemplate.Height = 25;
-            this.dataGridView1.Size = new System.Drawing.Size(849, 562);
-            this.dataGridView1.TabIndex = 16;
+            this.flightsGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.flightsGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.flightIdColumn,
+            this.flightGateColumn,
+            this.flightToDestinationColumn,
+            this.flightFromDestinationColumn,
+            this.flightAirlineColumn,
+            this.flightStatusColumn,
+            this.flightTimeColumn});
+            this.flightsGridView.Location = new System.Drawing.Point(12, 12);
+            this.flightsGridView.Name = "flightsGridView";
+            this.flightsGridView.RowTemplate.Height = 25;
+            this.flightsGridView.Size = new System.Drawing.Size(849, 562);
+            this.flightsGridView.TabIndex = 16;
+            // 
+            // flightIdColumn
+            // 
+            this.flightIdColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.flightIdColumn.HeaderText = "ID";
+            this.flightIdColumn.Name = "flightIdColumn";
+            // 
+            // flightGateColumn
+            // 
+            this.flightGateColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.flightGateColumn.HeaderText = "GATE";
+            this.flightGateColumn.Name = "flightGateColumn";
+            // 
+            // flightToDestinationColumn
+            // 
+            this.flightToDestinationColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.flightToDestinationColumn.HeaderText = "TO";
+            this.flightToDestinationColumn.Name = "flightToDestinationColumn";
+            // 
+            // flightFromDestinationColumn
+            // 
+            this.flightFromDestinationColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.flightFromDestinationColumn.HeaderText = "FROM";
+            this.flightFromDestinationColumn.Name = "flightFromDestinationColumn";
+            // 
+            // flightAirlineColumn
+            // 
+            this.flightAirlineColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.flightAirlineColumn.HeaderText = "AIRLINE";
+            this.flightAirlineColumn.Name = "flightAirlineColumn";
+            // 
+            // flightStatusColumn
+            // 
+            this.flightStatusColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells;
+            this.flightStatusColumn.HeaderText = "STATUS";
+            this.flightStatusColumn.Name = "flightStatusColumn";
+            this.flightStatusColumn.Width = 70;
+            // 
+            // flightTimeColumn
+            // 
+            this.flightTimeColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.flightTimeColumn.HeaderText = "TIME";
+            this.flightTimeColumn.Name = "flightTimeColumn";
             // 
             // FlightsForm
             // 
@@ -213,10 +271,10 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.gateComboBox);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.dataGridView1);
+            this.Controls.Add(this.flightsGridView);
             this.Name = "FlightsForm";
             this.Text = "FlightsForm";
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.flightsGridView)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -239,6 +297,13 @@
         private Label label2;
         private ComboBox gateComboBox;
         private Label label1;
-        private DataGridView dataGridView1;
+        private DataGridView flightsGridView;
+        private DataGridViewTextBoxColumn flightIdColumn;
+        private DataGridViewTextBoxColumn flightGateColumn;
+        private DataGridViewTextBoxColumn flightToDestinationColumn;
+        private DataGridViewTextBoxColumn flightFromDestinationColumn;
+        private DataGridViewTextBoxColumn flightAirlineColumn;
+        private DataGridViewTextBoxColumn flightStatusColumn;
+        private DataGridViewTextBoxColumn flightTimeColumn;
     }
 }

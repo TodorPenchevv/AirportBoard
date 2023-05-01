@@ -1,9 +1,9 @@
-﻿using AirportBoard.Exceptions;
+﻿using AirportBoard.Logging;
 using AirportBoard.Models;
 
 namespace AirportBoard.Services
 {
-    internal class FlightService : ServiceInterface
+    internal class FlightService : Service
     {
         private string id;
         private string gateId;
@@ -13,17 +13,20 @@ namespace AirportBoard.Services
         private string statusId;
         private string time;
 
-        public FlightService()
+        public FlightService() {}
+
+        public override void setFields(Dictionary<string, string> values)
         {
-            getFields();
+            id = valueContains(values, "id");
+            gateId = valueContains(values, "gateId");
+            airlineId = valueContains(values, "airlineId");
+            fromDestinationId = valueContains(values, "fromDestinationId");
+            toDestinationId = valueContains(values, "toDestinationId");
+            statusId = valueContains(values, "statusId");
+            time = valueContains(values, "time"); //"04/21/2009 14:25:53"
         }
 
-        public void getFields()
-        {
-            //"04/21/2009 14:25:53"
-        }
-
-        public void save() {
+        public override void save() {
             try
             {
                 Flight flight = new Flight();
@@ -37,11 +40,11 @@ namespace AirportBoard.Services
             }
             catch (Exception e)
             {
-                throw new InsertException();
+                Notification.show("Error", e.Message);
             }
         }
 
-        public void update()
+        public override void update()
         {
             try
             {
@@ -57,11 +60,11 @@ namespace AirportBoard.Services
             }
             catch (Exception e)
             {
-                throw new UpdateException();
+                Notification.show("Error", e.Message);
             }
         }
 
-        public void delete()
+        public override void delete()
         {
             try
             {
@@ -71,7 +74,7 @@ namespace AirportBoard.Services
             }
             catch (Exception e)
             {
-                throw new DeleteException();
+                Notification.show("Error", e.Message);
             }
         }
     }

@@ -37,6 +37,87 @@ namespace AirportBoard.Models
             runQuery(query);
         }
 
+        public override List<List<string>> getAllWithRelations()
+        {
+            string query =
+                "SELECT " +
+                    "flights.id, " +
+                    "gates.[zone] & gates.[gate_number], " +
+                    "to_dst.airport, " +
+                    "from_dst.airport, " +
+                    "airlines.name, " +
+                    "flight_status.status, " +
+                    "flights.time, " +
+                    "flights.gate_id, " +
+                    "flights.to_destination_id, " +
+                    "flights.from_destination_id, " +
+                    "flights.airline_id, " +
+                    "flights.status_id " +
+                "FROM ((((flights " +
+                "LEFT JOIN gates " +
+                "ON gates.id = flights.gate_id) " +
+                "LEFT JOIN destinations to_dst " +
+                "ON to_dst.id = flights.to_destination_id) " +
+                "LEFT JOIN destinations from_dst " +
+                "ON from_dst.id = flights.from_destination_id) " +
+                "LEFT JOIN airlines " +
+                "ON airlines.id = flights.airline_id) " +
+                "LEFT JOIN flight_status " +
+                "ON flight_status.id = flights.status_id";
+
+            return runSelect(query);
+        }
+
+        public static List<List<string>> getAllDepartures()
+        {
+            string query =
+                "SELECT " +
+                    "flights.time, " +
+                    "cities.name & ' (' & to_dst.airport & ')', " +
+                    "flights.id, " +
+                    "gates.[zone] & gates.[gate_number], " +
+                    "flight_status.status " +
+                "FROM ((((flights " +
+                "LEFT JOIN gates " +
+                "ON gates.id = flights.gate_id) " +
+                "LEFT JOIN destinations to_dst " +
+                "ON to_dst.id = flights.to_destination_id)" +
+                "LEFT JOIN cities " +
+                "ON cities.id = to_dst.city_id) " +
+                "LEFT JOIN airlines " +
+                "ON airlines.id = flights.airline_id) " +
+                "LEFT JOIN flight_status " +
+                "ON flight_status.id = flights.status_id " +
+                "WHERE from_destination_id = 0";
+
+            return runSelect(query);
+        }
+
+        public static List<List<string>> getAllArrivals()
+        {
+            string query =
+                "SELECT " +
+                    "flights.time, " +
+                    "cities.name & ' (' & from_dst.airport & ')', " +
+                    "flights.id, " +
+                    "gates.[zone] & gates.[gate_number], " +
+                    "flight_status.status " +
+                "FROM ((((flights " +
+                "LEFT JOIN gates " +
+                "ON gates.id = flights.gate_id) " +
+                "LEFT JOIN destinations from_dst " +
+                "ON from_dst.id = flights.from_destination_id)" +
+                "LEFT JOIN cities " +
+                "ON cities.id = from_dst.city_id) " +
+                "LEFT JOIN airlines " +
+                "ON airlines.id = flights.airline_id) " +
+                "LEFT JOIN flight_status " +
+                "ON flight_status.id = flights.status_id " +
+                "WHERE to_destination_id = 0";
+
+            return runSelect(query);
+        }
+
         public override string getId()
         {
             return id;

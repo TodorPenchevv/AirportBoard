@@ -35,8 +35,11 @@
             this.addGate = new System.Windows.Forms.Button();
             this.gateZoneTextBox = new System.Windows.Forms.TextBox();
             this.label14 = new System.Windows.Forms.Label();
-            this.dataGridView6 = new System.Windows.Forms.DataGridView();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView6)).BeginInit();
+            this.gatesGridView = new System.Windows.Forms.DataGridView();
+            this.gateId = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.gateZone = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.gateNumber = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            ((System.ComponentModel.ISupportInitialize)(this.gatesGridView)).BeginInit();
             this.SuspendLayout();
             // 
             // gateNumberTextBox
@@ -66,6 +69,7 @@
             this.deleteGate.TabIndex = 43;
             this.deleteGate.Text = "Delete";
             this.deleteGate.UseVisualStyleBackColor = true;
+            this.deleteGate.Click += new System.EventHandler(this.deleteGate_Click);
             // 
             // updateGate
             // 
@@ -76,6 +80,7 @@
             this.updateGate.TabIndex = 42;
             this.updateGate.Text = "Update";
             this.updateGate.UseVisualStyleBackColor = true;
+            this.updateGate.Click += new System.EventHandler(this.updateGate_Click);
             // 
             // addGate
             // 
@@ -86,6 +91,7 @@
             this.addGate.TabIndex = 41;
             this.addGate.Text = "Add";
             this.addGate.UseVisualStyleBackColor = true;
+            this.addGate.Click += new System.EventHandler(this.addGate_Click);
             // 
             // gateZoneTextBox
             // 
@@ -105,14 +111,42 @@
             this.label14.TabIndex = 39;
             this.label14.Text = "Zone";
             // 
-            // dataGridView6
+            // gatesGridView
             // 
-            this.dataGridView6.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView6.Location = new System.Drawing.Point(12, 12);
-            this.dataGridView6.Name = "dataGridView6";
-            this.dataGridView6.RowTemplate.Height = 25;
-            this.dataGridView6.Size = new System.Drawing.Size(849, 562);
-            this.dataGridView6.TabIndex = 38;
+            this.gatesGridView.AllowUserToAddRows = false;
+            this.gatesGridView.AllowUserToDeleteRows = false;
+            this.gatesGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.gatesGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.gateId,
+            this.gateZone,
+            this.gateNumber});
+            this.gatesGridView.Location = new System.Drawing.Point(12, 12);
+            this.gatesGridView.Name = "gatesGridView";
+            this.gatesGridView.ReadOnly = true;
+            this.gatesGridView.RowTemplate.Height = 25;
+            this.gatesGridView.Size = new System.Drawing.Size(849, 562);
+            this.gatesGridView.TabIndex = 38;
+            // 
+            // gateId
+            // 
+            this.gateId.HeaderText = "ID";
+            this.gateId.Name = "gateId";
+            this.gateId.ReadOnly = true;
+            this.gateId.Width = 50;
+            // 
+            // gateZone
+            // 
+            this.gateZone.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.gateZone.HeaderText = "ZONE";
+            this.gateZone.Name = "gateZone";
+            this.gateZone.ReadOnly = true;
+            // 
+            // gateNumber
+            // 
+            this.gateNumber.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.gateNumber.HeaderText = "NUMBER";
+            this.gateNumber.Name = "gateNumber";
+            this.gateNumber.ReadOnly = true;
             // 
             // GatesForm
             // 
@@ -126,10 +160,11 @@
             this.Controls.Add(this.addGate);
             this.Controls.Add(this.gateZoneTextBox);
             this.Controls.Add(this.label14);
-            this.Controls.Add(this.dataGridView6);
+            this.Controls.Add(this.gatesGridView);
             this.Name = "GatesForm";
             this.Text = "GatesForm";
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView6)).EndInit();
+            this.Load += new System.EventHandler(this.GatesForm_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.gatesGridView)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -144,6 +179,9 @@
         private Button addGate;
         private TextBox gateZoneTextBox;
         private Label label14;
-        private DataGridView dataGridView6;
+        private DataGridView gatesGridView;
+        private DataGridViewTextBoxColumn gateId;
+        private DataGridViewTextBoxColumn gateZone;
+        private DataGridViewTextBoxColumn gateNumber;
     }
 }

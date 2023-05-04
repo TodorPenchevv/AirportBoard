@@ -26,56 +26,36 @@ namespace AirportBoard.Services
             time = valueContains(values, "time"); //"04/21/2009 14:25:53"
         }
 
-        public override void save() {
-            try
-            {
-                Flight flight = new Flight();
-                flight.setGateId(gateId);
-                flight.setAirlineId(airlineId);
-                flight.setFromDestinationId(fromDestinationId);
-                flight.setToDestinationId(toDestinationId);
-                flight.setStatusId(statusId);
-                flight.setTime(time);
-                flight.save();
-            }
-            catch (Exception e)
-            {
-                Notification.show("Error", e.Message);
-            }
+        public override void save() 
+        {
+            Flight flight = new Flight();
+            flight.setGateId(gateId);
+            flight.setAirlineId(airlineId);
+            flight.setFromDestinationId(fromDestinationId);
+            flight.setToDestinationId(toDestinationId);
+            flight.setStatusId(statusId);
+            flight.setTime(time);
+            flight.save();
         }
 
         public override void update()
         {
-            try
-            {
-                Flight flight = new Flight();
-                flight.setId(id);
-                flight.setGateId(gateId);
-                flight.setAirlineId(airlineId);
-                flight.setFromDestinationId(fromDestinationId);
-                flight.setToDestinationId(toDestinationId);
-                flight.setStatusId(statusId);
-                flight.setTime(time);
-                flight.update();
-            }
-            catch (Exception e)
-            {
-                Notification.show("Error", e.Message);
-            }
+            Flight flight = new Flight();
+            flight.setId(id);
+            flight.setGateId(gateId);
+            flight.setAirlineId(airlineId);
+            flight.setFromDestinationId(fromDestinationId);
+            flight.setToDestinationId(toDestinationId);
+            flight.setStatusId(statusId);
+            flight.setTime(time);
+            flight.update();
         }
 
         public override void delete()
         {
-            try
-            {
-                Flight flight = new Flight();
-                flight.setId(id);
-                flight.delete();
-            }
-            catch (Exception e)
-            {
-                Notification.show("Error", e.Message);
-            }
+            Flight flight = new Flight();
+            flight.setId(id);
+            flight.delete();
         }
     }
 }

@@ -21,6 +21,7 @@ namespace AirportBoard.Models
             OleDbCommand dbCmd = new OleDbCommand(query, dbConnect);
 
             dbConnect.Open();
+            //MessageBox.Show(query);
             OleDbDataReader reader = dbCmd.ExecuteReader();
             List<List<string>> rows = ListParser.readerToList(reader);
             dbConnect.Close();
@@ -38,7 +39,7 @@ namespace AirportBoard.Models
         {
             dbConnect.ConnectionString = conStr;
             OleDbCommand dbCmd = new OleDbCommand(query, dbConnect);
-
+            
             dbConnect.Open();
             //MessageBox.Show(query);
             dbCmd.ExecuteNonQuery();
@@ -61,6 +62,11 @@ namespace AirportBoard.Models
         public string getTableName()
         {
             return tableName;
+        }
+
+        public virtual List<List<string>> getAllWithRelations()
+        {
+            return getAll();
         }
 
         public abstract void save();

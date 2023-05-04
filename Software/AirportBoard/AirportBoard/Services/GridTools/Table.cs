@@ -1,4 +1,5 @@
-﻿using AirportBoard.Models;
+﻿using AirportBoard.Logging;
+using AirportBoard.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -11,8 +12,19 @@ namespace AirportBoard.Services.GridTools
     {
         public static void loadData(DataGridView grid, Model model)
         {
-            List<List<string>> rows = model.getAll();
+            try
+            {
+                List<List<string>> rows = model.getAllWithRelations();
+                loadRowsIntoGridView(grid, rows);
+            }
+            catch (Exception exception)
+            {
+                Notification.show("Error", exception.Message);
+            }
+        }
 
+        public static void loadRowsIntoGridView(DataGridView grid, List<List<string>> rows)
+        {
             grid.Rows.Clear();
 
             List<string> newRow;
@@ -27,6 +39,7 @@ namespace AirportBoard.Services.GridTools
 
                 grid.Rows.Add(newRow.ToArray());
             }
+
         }
     }
 }

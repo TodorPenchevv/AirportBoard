@@ -34,8 +34,8 @@
             this.countryTextBox = new System.Windows.Forms.TextBox();
             this.label11 = new System.Windows.Forms.Label();
             this.countriesGridView = new System.Windows.Forms.DataGridView();
-            this.countryIdColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.countryNameColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.countryId = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.countryName = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.countriesGridView)).BeginInit();
             this.SuspendLayout();
             // 
@@ -92,27 +92,32 @@
             // 
             // countriesGridView
             // 
+            this.countriesGridView.AllowUserToAddRows = false;
+            this.countriesGridView.AllowUserToDeleteRows = false;
             this.countriesGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.countriesGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.countryIdColumn,
-            this.countryNameColumn});
+            this.countryId,
+            this.countryName});
             this.countriesGridView.Location = new System.Drawing.Point(12, 12);
             this.countriesGridView.Name = "countriesGridView";
+            this.countriesGridView.ReadOnly = true;
             this.countriesGridView.RowTemplate.Height = 25;
             this.countriesGridView.Size = new System.Drawing.Size(849, 562);
             this.countriesGridView.TabIndex = 31;
             // 
-            // countryIdColumn
+            // countryId
             // 
-            this.countryIdColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.countryIdColumn.HeaderText = "ID";
-            this.countryIdColumn.Name = "countryIdColumn";
+            this.countryId.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.countryId.HeaderText = "ID";
+            this.countryId.Name = "countryId";
+            this.countryId.ReadOnly = true;
             // 
-            // countryNameColumn
+            // countryName
             // 
-            this.countryNameColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.countryNameColumn.HeaderText = "COUNTRY";
-            this.countryNameColumn.Name = "countryNameColumn";
+            this.countryName.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.countryName.HeaderText = "COUNTRY";
+            this.countryName.Name = "countryName";
+            this.countryName.ReadOnly = true;
             // 
             // CountriesForm
             // 
@@ -142,7 +147,7 @@
         private TextBox countryTextBox;
         private Label label11;
         private DataGridView countriesGridView;
-        private DataGridViewTextBoxColumn countryIdColumn;
-        private DataGridViewTextBoxColumn countryNameColumn;
+        private DataGridViewTextBoxColumn countryId;
+        private DataGridViewTextBoxColumn countryName;
     }
 }

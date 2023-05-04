@@ -34,14 +34,13 @@
             this.destinationsButton = new System.Windows.Forms.Button();
             this.flightsButton = new System.Windows.Forms.Button();
             this.flightStatusesButton = new System.Windows.Forms.Button();
-            this.gatesButton = new System.Windows.Forms.Button();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.arrivalGridView = new System.Windows.Forms.DataGridView();
             this.arrivalTimes = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.arrivalDestinations = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.arrivalFlight = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.arrivalGate = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.arrivalStatus = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridView2 = new System.Windows.Forms.DataGridView();
+            this.departureGridView = new System.Windows.Forms.DataGridView();
             this.departureTime = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.departureDestination = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.departureFlight = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -49,13 +48,15 @@
             this.departureStatus = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
+            this.button1 = new System.Windows.Forms.Button();
+            this.refreshButton = new System.Windows.Forms.Button();
+            ((System.ComponentModel.ISupportInitialize)(this.arrivalGridView)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.departureGridView)).BeginInit();
             this.SuspendLayout();
             // 
             // airlinesButton
             // 
-            this.airlinesButton.Location = new System.Drawing.Point(143, 572);
+            this.airlinesButton.Location = new System.Drawing.Point(12, 572);
             this.airlinesButton.Name = "airlinesButton";
             this.airlinesButton.Size = new System.Drawing.Size(116, 33);
             this.airlinesButton.TabIndex = 0;
@@ -65,7 +66,7 @@
             // 
             // citiesButton
             // 
-            this.citiesButton.Location = new System.Drawing.Point(265, 572);
+            this.citiesButton.Location = new System.Drawing.Point(134, 572);
             this.citiesButton.Name = "citiesButton";
             this.citiesButton.Size = new System.Drawing.Size(116, 33);
             this.citiesButton.TabIndex = 1;
@@ -75,7 +76,7 @@
             // 
             // countriesButton
             // 
-            this.countriesButton.Location = new System.Drawing.Point(387, 572);
+            this.countriesButton.Location = new System.Drawing.Point(256, 572);
             this.countriesButton.Name = "countriesButton";
             this.countriesButton.Size = new System.Drawing.Size(116, 33);
             this.countriesButton.TabIndex = 2;
@@ -85,7 +86,7 @@
             // 
             // destinationsButton
             // 
-            this.destinationsButton.Location = new System.Drawing.Point(509, 572);
+            this.destinationsButton.Location = new System.Drawing.Point(378, 572);
             this.destinationsButton.Name = "destinationsButton";
             this.destinationsButton.Size = new System.Drawing.Size(116, 33);
             this.destinationsButton.TabIndex = 3;
@@ -95,7 +96,7 @@
             // 
             // flightsButton
             // 
-            this.flightsButton.Location = new System.Drawing.Point(631, 572);
+            this.flightsButton.Location = new System.Drawing.Point(500, 572);
             this.flightsButton.Name = "flightsButton";
             this.flightsButton.Size = new System.Drawing.Size(116, 33);
             this.flightsButton.TabIndex = 4;
@@ -105,7 +106,7 @@
             // 
             // flightStatusesButton
             // 
-            this.flightStatusesButton.Location = new System.Drawing.Point(753, 572);
+            this.flightStatusesButton.Location = new System.Drawing.Point(622, 572);
             this.flightStatusesButton.Name = "flightStatusesButton";
             this.flightStatusesButton.Size = new System.Drawing.Size(116, 33);
             this.flightStatusesButton.TabIndex = 5;
@@ -113,95 +114,109 @@
             this.flightStatusesButton.UseVisualStyleBackColor = true;
             this.flightStatusesButton.Click += new System.EventHandler(this.flightStatusesButton_Click);
             // 
-            // gatesButton
+            // arrivalGridView
             // 
-            this.gatesButton.Location = new System.Drawing.Point(875, 572);
-            this.gatesButton.Name = "gatesButton";
-            this.gatesButton.Size = new System.Drawing.Size(116, 33);
-            this.gatesButton.TabIndex = 6;
-            this.gatesButton.Text = "Gates";
-            this.gatesButton.UseVisualStyleBackColor = true;
-            this.gatesButton.Click += new System.EventHandler(this.button7_Click);
-            // 
-            // dataGridView1
-            // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.arrivalGridView.AllowUserToAddRows = false;
+            this.arrivalGridView.AllowUserToDeleteRows = false;
+            this.arrivalGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.arrivalGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.arrivalTimes,
             this.arrivalDestinations,
             this.arrivalFlight,
             this.arrivalGate,
             this.arrivalStatus});
-            this.dataGridView1.Location = new System.Drawing.Point(12, 62);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.RowTemplate.Height = 25;
-            this.dataGridView1.Size = new System.Drawing.Size(537, 491);
-            this.dataGridView1.TabIndex = 7;
+            this.arrivalGridView.Location = new System.Drawing.Point(12, 62);
+            this.arrivalGridView.Name = "arrivalGridView";
+            this.arrivalGridView.ReadOnly = true;
+            this.arrivalGridView.RowTemplate.Height = 25;
+            this.arrivalGridView.Size = new System.Drawing.Size(537, 491);
+            this.arrivalGridView.TabIndex = 7;
             // 
             // arrivalTimes
             // 
+            this.arrivalTimes.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
             this.arrivalTimes.HeaderText = "TIME";
             this.arrivalTimes.Name = "arrivalTimes";
+            this.arrivalTimes.ReadOnly = true;
             // 
             // arrivalDestinations
             // 
-            this.arrivalDestinations.HeaderText = "DESTINATION";
+            this.arrivalDestinations.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.arrivalDestinations.HeaderText = "FROM";
             this.arrivalDestinations.Name = "arrivalDestinations";
+            this.arrivalDestinations.ReadOnly = true;
             // 
             // arrivalFlight
             // 
+            this.arrivalFlight.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
             this.arrivalFlight.HeaderText = "FLIGHT";
             this.arrivalFlight.Name = "arrivalFlight";
+            this.arrivalFlight.ReadOnly = true;
             // 
             // arrivalGate
             // 
             this.arrivalGate.HeaderText = "GATE";
             this.arrivalGate.Name = "arrivalGate";
+            this.arrivalGate.ReadOnly = true;
+            this.arrivalGate.Width = 50;
             // 
             // arrivalStatus
             // 
             this.arrivalStatus.HeaderText = "STATUS";
             this.arrivalStatus.Name = "arrivalStatus";
+            this.arrivalStatus.ReadOnly = true;
             // 
-            // dataGridView2
+            // departureGridView
             // 
-            this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView2.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.departureGridView.AllowUserToAddRows = false;
+            this.departureGridView.AllowUserToDeleteRows = false;
+            this.departureGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.departureGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.departureTime,
             this.departureDestination,
             this.departureFlight,
             this.departureGate,
             this.departureStatus});
-            this.dataGridView2.Location = new System.Drawing.Point(555, 62);
-            this.dataGridView2.Name = "dataGridView2";
-            this.dataGridView2.RowTemplate.Height = 25;
-            this.dataGridView2.Size = new System.Drawing.Size(537, 491);
-            this.dataGridView2.TabIndex = 8;
+            this.departureGridView.Location = new System.Drawing.Point(555, 62);
+            this.departureGridView.Name = "departureGridView";
+            this.departureGridView.ReadOnly = true;
+            this.departureGridView.RowTemplate.Height = 25;
+            this.departureGridView.Size = new System.Drawing.Size(537, 491);
+            this.departureGridView.TabIndex = 8;
             // 
             // departureTime
             // 
+            this.departureTime.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
             this.departureTime.HeaderText = "TIME";
             this.departureTime.Name = "departureTime";
+            this.departureTime.ReadOnly = true;
             // 
             // departureDestination
             // 
-            this.departureDestination.HeaderText = "DESTINATION";
+            this.departureDestination.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.departureDestination.HeaderText = "TO";
             this.departureDestination.Name = "departureDestination";
+            this.departureDestination.ReadOnly = true;
             // 
             // departureFlight
             // 
+            this.departureFlight.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
             this.departureFlight.HeaderText = "FLIGHT";
             this.departureFlight.Name = "departureFlight";
+            this.departureFlight.ReadOnly = true;
             // 
             // departureGate
             // 
             this.departureGate.HeaderText = "GATE";
             this.departureGate.Name = "departureGate";
+            this.departureGate.ReadOnly = true;
+            this.departureGate.Width = 50;
             // 
             // departureStatus
             // 
             this.departureStatus.HeaderText = "STATUS";
             this.departureStatus.Name = "departureStatus";
+            this.departureStatus.ReadOnly = true;
             // 
             // label1
             // 
@@ -223,16 +238,37 @@
             this.label2.TabIndex = 10;
             this.label2.Text = "DEPARTURES";
             // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(744, 572);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(116, 33);
+            this.button1.TabIndex = 11;
+            this.button1.Text = "Gates";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // refreshButton
+            // 
+            this.refreshButton.Location = new System.Drawing.Point(976, 572);
+            this.refreshButton.Name = "refreshButton";
+            this.refreshButton.Size = new System.Drawing.Size(116, 33);
+            this.refreshButton.TabIndex = 12;
+            this.refreshButton.Text = "Refresh";
+            this.refreshButton.UseVisualStyleBackColor = true;
+            this.refreshButton.Click += new System.EventHandler(this.refreshButton_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1102, 617);
+            this.Controls.Add(this.refreshButton);
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.dataGridView2);
-            this.Controls.Add(this.dataGridView1);
-            this.Controls.Add(this.gatesButton);
+            this.Controls.Add(this.departureGridView);
+            this.Controls.Add(this.arrivalGridView);
             this.Controls.Add(this.flightStatusesButton);
             this.Controls.Add(this.flightsButton);
             this.Controls.Add(this.destinationsButton);
@@ -241,8 +277,9 @@
             this.Controls.Add(this.airlinesButton);
             this.Name = "Form1";
             this.Text = "Form1";
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
+            this.Load += new System.EventHandler(this.Form1_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.arrivalGridView)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.departureGridView)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -256,20 +293,21 @@
         private Button destinationsButton;
         private Button flightsButton;
         private Button flightStatusesButton;
-        private Button gatesButton;
-        private DataGridView dataGridView1;
+        private DataGridView arrivalGridView;
+        private DataGridView departureGridView;
+        private Label label1;
+        private Label label2;
+        private Button button1;
         private DataGridViewTextBoxColumn arrivalTimes;
         private DataGridViewTextBoxColumn arrivalDestinations;
         private DataGridViewTextBoxColumn arrivalFlight;
         private DataGridViewTextBoxColumn arrivalGate;
         private DataGridViewTextBoxColumn arrivalStatus;
-        private DataGridView dataGridView2;
         private DataGridViewTextBoxColumn departureTime;
         private DataGridViewTextBoxColumn departureDestination;
         private DataGridViewTextBoxColumn departureFlight;
         private DataGridViewTextBoxColumn departureGate;
         private DataGridViewTextBoxColumn departureStatus;
-        private Label label1;
-        private Label label2;
+        private Button refreshButton;
     }
 }

@@ -24,45 +24,24 @@ namespace AirportBoard.Services
 
         public override void save()
         {
-            try
-            {
-                Country country = new Country();
-                country.setName(name);
-                country.save();
-            }
-            catch (Exception e)
-            {
-                Notification.show("Error", e.Message);
-            }
+            Country country = new Country();
+            country.setName(name);
+            country.save();
         }
 
         public override void update()
         {
-            try
-            {
-                Country country = new Country();
-                country.setId(id);
-                country.setName(name);
-                country.update();
-            }
-            catch (Exception e)
-            {
-                Notification.show("Error", e.Message);
-            }
+            Country country = new Country();
+            country.setId(id);
+            country.setName(name);
+            country.update();
         }
 
         public override void delete()
         {
-            try
-            {
-                Country country = new Country();
-                country.setId(id);
-                country.delete();
-            }
-            catch (Exception e)
-            {
-                Notification.show("Error", e.Message);
-            }
+            Country country = new Country();
+            country.setId(id);
+            country.delete();
         }
     }
 }

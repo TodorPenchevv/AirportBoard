@@ -36,9 +36,10 @@
             this.airlineCountryComboBox = new System.Windows.Forms.ComboBox();
             this.label13 = new System.Windows.Forms.Label();
             this.airlinesGridView = new System.Windows.Forms.DataGridView();
-            this.airlineIdColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.airlineNameColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.airlineCountryColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.airlineId = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.airlineName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.airlineCountryId = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.airlineCountry = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.airlinesGridView)).BeginInit();
             this.SuspendLayout();
             // 
@@ -51,6 +52,7 @@
             this.deleteAirline.TabIndex = 41;
             this.deleteAirline.Text = "Delete";
             this.deleteAirline.UseVisualStyleBackColor = true;
+            this.deleteAirline.Click += new System.EventHandler(this.deleteAirline_Click);
             // 
             // updateAirline
             // 
@@ -61,6 +63,7 @@
             this.updateAirline.TabIndex = 40;
             this.updateAirline.Text = "Update";
             this.updateAirline.UseVisualStyleBackColor = true;
+            this.updateAirline.Click += new System.EventHandler(this.updateAirline_Click);
             // 
             // addAirline
             // 
@@ -71,6 +74,7 @@
             this.addAirline.TabIndex = 39;
             this.addAirline.Text = "Add";
             this.addAirline.UseVisualStyleBackColor = true;
+            this.addAirline.Click += new System.EventHandler(this.addAirline_Click);
             // 
             // label12
             // 
@@ -111,34 +115,48 @@
             // 
             // airlinesGridView
             // 
+            this.airlinesGridView.AllowUserToAddRows = false;
+            this.airlinesGridView.AllowUserToDeleteRows = false;
             this.airlinesGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.airlinesGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.airlineIdColumn,
-            this.airlineNameColumn,
-            this.airlineCountryColumn});
+            this.airlineId,
+            this.airlineName,
+            this.airlineCountryId,
+            this.airlineCountry});
             this.airlinesGridView.Location = new System.Drawing.Point(12, 12);
             this.airlinesGridView.Name = "airlinesGridView";
+            this.airlinesGridView.ReadOnly = true;
             this.airlinesGridView.RowTemplate.Height = 25;
             this.airlinesGridView.Size = new System.Drawing.Size(849, 562);
             this.airlinesGridView.TabIndex = 34;
             // 
-            // airlineIdColumn
+            // airlineId
             // 
-            this.airlineIdColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.airlineIdColumn.HeaderText = "ID";
-            this.airlineIdColumn.Name = "airlineIdColumn";
+            this.airlineId.HeaderText = "ID";
+            this.airlineId.Name = "airlineId";
+            this.airlineId.ReadOnly = true;
+            this.airlineId.Width = 50;
             // 
-            // airlineNameColumn
+            // airlineName
             // 
-            this.airlineNameColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.airlineNameColumn.HeaderText = "NAME";
-            this.airlineNameColumn.Name = "airlineNameColumn";
+            this.airlineName.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.airlineName.HeaderText = "NAME";
+            this.airlineName.Name = "airlineName";
+            this.airlineName.ReadOnly = true;
             // 
-            // airlineCountryColumn
+            // airlineCountryId
             // 
-            this.airlineCountryColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.airlineCountryColumn.HeaderText = "COUNTRY";
-            this.airlineCountryColumn.Name = "airlineCountryColumn";
+            this.airlineCountryId.HeaderText = "COUNTRY_ID";
+            this.airlineCountryId.Name = "airlineCountryId";
+            this.airlineCountryId.ReadOnly = true;
+            this.airlineCountryId.Width = 150;
+            // 
+            // airlineCountry
+            // 
+            this.airlineCountry.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.airlineCountry.HeaderText = "COUNTRY";
+            this.airlineCountry.Name = "airlineCountry";
+            this.airlineCountry.ReadOnly = true;
             // 
             // AirlinesForm
             // 
@@ -155,6 +173,7 @@
             this.Controls.Add(this.airlinesGridView);
             this.Name = "AirlinesForm";
             this.Text = "AirlinesForm";
+            this.Load += new System.EventHandler(this.AirlinesForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.airlinesGridView)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -171,8 +190,9 @@
         private ComboBox airlineCountryComboBox;
         private Label label13;
         private DataGridView airlinesGridView;
-        private DataGridViewTextBoxColumn airlineIdColumn;
-        private DataGridViewTextBoxColumn airlineNameColumn;
-        private DataGridViewTextBoxColumn airlineCountryColumn;
+        private DataGridViewTextBoxColumn airlineId;
+        private DataGridViewTextBoxColumn airlineName;
+        private DataGridViewTextBoxColumn airlineCountryId;
+        private DataGridViewTextBoxColumn airlineCountry;
     }
 }

@@ -39,6 +39,17 @@ namespace AirportBoard.Models
             runQuery(query);
         }
 
+        public override List<List<string>> getAllWithRelations()
+        {
+            string query = 
+                "SELECT airlines.id, airlines.name, airlines.country_id, countries.name " +
+                "FROM airlines " + 
+                "LEFT JOIN countries " +
+                "ON countries.id = airlines.country_id";
+
+            return runSelect(query);
+        }
+
         public override string getId()
         {
             return id;

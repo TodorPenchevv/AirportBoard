@@ -34,8 +34,8 @@
             this.statusNameTextBox = new System.Windows.Forms.TextBox();
             this.label17 = new System.Windows.Forms.Label();
             this.statusesGridView = new System.Windows.Forms.DataGridView();
-            this.statusIdColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.statusNameColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.statusId = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.statusName = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.statusesGridView)).BeginInit();
             this.SuspendLayout();
             // 
@@ -48,6 +48,7 @@
             this.deleteStatus.TabIndex = 48;
             this.deleteStatus.Text = "Delete";
             this.deleteStatus.UseVisualStyleBackColor = true;
+            this.deleteStatus.Click += new System.EventHandler(this.deleteStatus_Click);
             // 
             // updateStatus
             // 
@@ -58,6 +59,7 @@
             this.updateStatus.TabIndex = 47;
             this.updateStatus.Text = "Update";
             this.updateStatus.UseVisualStyleBackColor = true;
+            this.updateStatus.Click += new System.EventHandler(this.updateStatus_Click);
             // 
             // addStatus
             // 
@@ -68,6 +70,7 @@
             this.addStatus.TabIndex = 46;
             this.addStatus.Text = "Add";
             this.addStatus.UseVisualStyleBackColor = true;
+            this.addStatus.Click += new System.EventHandler(this.addStatus_Click);
             // 
             // statusNameTextBox
             // 
@@ -89,27 +92,32 @@
             // 
             // statusesGridView
             // 
+            this.statusesGridView.AllowUserToAddRows = false;
+            this.statusesGridView.AllowUserToDeleteRows = false;
             this.statusesGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.statusesGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.statusIdColumn,
-            this.statusNameColumn});
+            this.statusId,
+            this.statusName});
             this.statusesGridView.Location = new System.Drawing.Point(12, 12);
             this.statusesGridView.Name = "statusesGridView";
+            this.statusesGridView.ReadOnly = true;
             this.statusesGridView.RowTemplate.Height = 25;
             this.statusesGridView.Size = new System.Drawing.Size(849, 562);
             this.statusesGridView.TabIndex = 43;
             // 
-            // statusIdColumn
+            // statusId
             // 
-            this.statusIdColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.statusIdColumn.HeaderText = "ID";
-            this.statusIdColumn.Name = "statusIdColumn";
+            this.statusId.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.statusId.HeaderText = "ID";
+            this.statusId.Name = "statusId";
+            this.statusId.ReadOnly = true;
             // 
-            // statusNameColumn
+            // statusName
             // 
-            this.statusNameColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.statusNameColumn.HeaderText = "STATUS";
-            this.statusNameColumn.Name = "statusNameColumn";
+            this.statusName.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.statusName.HeaderText = "STATUS";
+            this.statusName.Name = "statusName";
+            this.statusName.ReadOnly = true;
             // 
             // StatusesForm
             // 
@@ -124,6 +132,7 @@
             this.Controls.Add(this.statusesGridView);
             this.Name = "StatusesForm";
             this.Text = "StatusesForm";
+            this.Load += new System.EventHandler(this.StatusesForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.statusesGridView)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -138,7 +147,7 @@
         private TextBox statusNameTextBox;
         private Label label17;
         private DataGridView statusesGridView;
-        private DataGridViewTextBoxColumn statusIdColumn;
-        private DataGridViewTextBoxColumn statusNameColumn;
+        private DataGridViewTextBoxColumn statusId;
+        private DataGridViewTextBoxColumn statusName;
     }
 }

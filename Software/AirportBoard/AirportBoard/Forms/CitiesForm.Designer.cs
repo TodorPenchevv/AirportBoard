@@ -36,9 +36,10 @@
             this.cityCountryComboBox = new System.Windows.Forms.ComboBox();
             this.label10 = new System.Windows.Forms.Label();
             this.citiesGridView = new System.Windows.Forms.DataGridView();
-            this.cityIdColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.cityNameColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.cityCountryColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.cityId = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.cityName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.cityCountryId = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.cityCountry = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.citiesGridView)).BeginInit();
             this.SuspendLayout();
             // 
@@ -114,34 +115,50 @@
             // 
             // citiesGridView
             // 
+            this.citiesGridView.AllowUserToAddRows = false;
+            this.citiesGridView.AllowUserToDeleteRows = false;
             this.citiesGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.citiesGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.cityIdColumn,
-            this.cityNameColumn,
-            this.cityCountryColumn});
+            this.cityId,
+            this.cityName,
+            this.cityCountryId,
+            this.cityCountry});
             this.citiesGridView.Location = new System.Drawing.Point(12, 12);
             this.citiesGridView.Name = "citiesGridView";
+            this.citiesGridView.ReadOnly = true;
             this.citiesGridView.RowTemplate.Height = 25;
             this.citiesGridView.Size = new System.Drawing.Size(849, 562);
             this.citiesGridView.TabIndex = 28;
             // 
-            // cityIdColumn
+            // cityId
             // 
-            this.cityIdColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.cityIdColumn.HeaderText = "ID";
-            this.cityIdColumn.Name = "cityIdColumn";
+            this.cityId.FillWeight = 154.6392F;
+            this.cityId.HeaderText = "ID";
+            this.cityId.Name = "cityId";
+            this.cityId.ReadOnly = true;
+            this.cityId.Width = 50;
             // 
-            // cityNameColumn
+            // cityName
             // 
-            this.cityNameColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.cityNameColumn.HeaderText = "CITY";
-            this.cityNameColumn.Name = "cityNameColumn";
+            this.cityName.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.cityName.FillWeight = 72.68041F;
+            this.cityName.HeaderText = "CITY";
+            this.cityName.Name = "cityName";
+            this.cityName.ReadOnly = true;
             // 
-            // cityCountryColumn
+            // cityCountryId
             // 
-            this.cityCountryColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.cityCountryColumn.HeaderText = "COUNTRY";
-            this.cityCountryColumn.Name = "cityCountryColumn";
+            this.cityCountryId.HeaderText = "COUNTRY_ID";
+            this.cityCountryId.Name = "cityCountryId";
+            this.cityCountryId.ReadOnly = true;
+            // 
+            // cityCountry
+            // 
+            this.cityCountry.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.cityCountry.FillWeight = 72.68041F;
+            this.cityCountry.HeaderText = "COUNTRY";
+            this.cityCountry.Name = "cityCountry";
+            this.cityCountry.ReadOnly = true;
             // 
             // CitiesForm
             // 
@@ -175,8 +192,9 @@
         private ComboBox cityCountryComboBox;
         private Label label10;
         private DataGridView citiesGridView;
-        private DataGridViewTextBoxColumn cityIdColumn;
-        private DataGridViewTextBoxColumn cityNameColumn;
-        private DataGridViewTextBoxColumn cityCountryColumn;
+        private DataGridViewTextBoxColumn cityId;
+        private DataGridViewTextBoxColumn cityName;
+        private DataGridViewTextBoxColumn cityCountryId;
+        private DataGridViewTextBoxColumn cityCountry;
     }
 }

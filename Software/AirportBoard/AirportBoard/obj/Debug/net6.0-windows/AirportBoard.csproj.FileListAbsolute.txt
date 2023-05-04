@@ -35,5 +35,5 @@ C:\Users\todor\Desktop\AirportBoard\Software\AirportBoard\AirportBoard\obj\Debug
 C:\Users\todor\Desktop\AirportBoard\Software\AirportBoard\AirportBoard\obj\Debug\net6.0-windows\AirportBoard.Forms.CountriesForm.resources
 C:\Users\todor\Desktop\AirportBoard\Software\AirportBoard\AirportBoard\obj\Debug\net6.0-windows\AirportBoard.Forms.DestinationsForm.resources
 C:\Users\todor\Desktop\AirportBoard\Software\AirportBoard\AirportBoard\obj\Debug\net6.0-windows\AirportBoard.Forms.FlightsForm.resources
-C:\Users\todor\Desktop\AirportBoard\Software\AirportBoard\AirportBoard\obj\Debug\net6.0-windows\AirportBoard.Forms.GatesForm.resources
 C:\Users\todor\Desktop\AirportBoard\Software\AirportBoard\AirportBoard\obj\Debug\net6.0-windows\AirportBoard.Forms.StatusesForm.resources
+C:\Users\todor\Desktop\AirportBoard\Software\AirportBoard\AirportBoard\obj\Debug\net6.0-windows\AirportBoard.Forms.GatesForm.resources

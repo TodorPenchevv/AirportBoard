@@ -24,45 +24,24 @@ namespace AirportBoard.Services
 
         public override void save()
         {
-            try
-            {
-                FlightStatus status = new FlightStatus();
-                status.setStatus(statusName);
-                status.save();
-            }
-            catch (Exception e)
-            {
-                Notification.show("Error", e.Message);
-            }
+            FlightStatus status = new FlightStatus();
+            status.setStatus(statusName);
+            status.save();
         }
 
         public override void update()
         {
-            try
-            {
-                FlightStatus status = new FlightStatus();
-                status.setId(id);
-                status.setStatus(statusName);
-                status.update();
-            }
-            catch (Exception e)
-            {
-                Notification.show("Error", e.Message);
-            }
+            FlightStatus status = new FlightStatus();
+            status.setId(id);
+            status.setStatus(statusName);
+            status.update();
         }
 
         public override void delete()
         {
-            try
-            {
-                FlightStatus status = new FlightStatus();
-                status.setId(id);
-                status.delete();
-            }
-            catch (Exception e)
-            {
-                Notification.show("Error", e.Message);
-            }
+            FlightStatus status = new FlightStatus();
+            status.setId(id);
+            status.delete();
         }
     }
 }

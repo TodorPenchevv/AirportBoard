@@ -20,47 +20,26 @@ namespace AirportBoard.Services
 
         public override void save()
         {
-            try
-            {
-                Gate gate = new Gate();
-                gate.setZone(zone);
-                gate.setNumber(number);
-                gate.save();
-            }
-            catch (Exception e)
-            {
-                Notification.show("Error", e.Message);
-            }
+            Gate gate = new Gate();
+            gate.setZone(zone);
+            gate.setNumber(number);
+            gate.save();
         }
 
         public override void update()
         {
-            try
-            {
-                Gate gate = new Gate();
-                gate.setId(id);
-                gate.setZone(zone);
-                gate.setNumber(number);
-                gate.update();
-            }
-            catch (Exception e)
-            {
-                Notification.show("Error", e.Message);
-            }
+            Gate gate = new Gate();
+            gate.setId(id);
+            gate.setZone(zone);
+            gate.setNumber(number);
+            gate.update();
         }
 
         public override void delete()
         {
-            try
-            {
-                Gate gate = new Gate();
-                gate.setId(id);
-                gate.delete();
-            }
-            catch (Exception e)
-            {
-                Notification.show("Error", e.Message);
-            }
+            Gate gate = new Gate();
+            gate.setId(id);
+            gate.delete();
         }
     }
 }

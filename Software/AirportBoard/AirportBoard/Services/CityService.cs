@@ -21,47 +21,26 @@ namespace AirportBoard.Services
 
         public override void save()
         {
-            try
-            {
-                City city = new City();
-                city.setName(name);
-                city.setCountryId(countryId);
-                city.save();
-            }
-            catch (Exception e)
-            {
-                Notification.show("Error", e.Message);
-            }
+            City city = new City();
+            city.setName(name);
+            city.setCountryId(countryId);
+            city.save();
         }
 
         public override void update()
         {
-            try
-            {
-                City city = new City();
-                city.setId(id);
-                city.setName(name);
-                city.setCountryId(countryId);
-                city.update();
-            }
-            catch (Exception e)
-            {
-                Notification.show("Error", e.Message);
-            }
+            City city = new City();
+            city.setId(id);
+            city.setName(name);
+            city.setCountryId(countryId);
+            city.update();
         }
 
         public override void delete()
         {
-            try
-            {
-                City city = new City();
-                city.setId(id);
-                city.delete();
-            }
-            catch (Exception e)
-            {
-                Notification.show("Error", e.Message);
-            }
+            City city = new City();
+            city.setId(id);
+            city.delete();
         }
     }
 }

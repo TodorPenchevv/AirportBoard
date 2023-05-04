@@ -19,14 +19,14 @@ namespace AirportBoard.Models
 
         public override void save()
         {
-            string query = String.Format("INSERT INTO {0}(zone, gate_number) VALUES('{1}', {2})", tableName, zone, number);
+            string query = String.Format("INSERT INTO {0} ([zone], [gate_number]) VALUES('{1}', {2})", tableName, zone, number);
 
             runQuery(query);
         }
 
         public override void update()
         {
-            string query = String.Format("UPDATE {0} SET zone='{1}', gate_number={2} WHERE ID={3}", tableName, zone, number, id);
+            string query = String.Format("UPDATE {0} SET [zone]='{1}', [gate_number]={2} WHERE ID={3}", tableName, zone, number, id);
 
             runQuery(query);
         }

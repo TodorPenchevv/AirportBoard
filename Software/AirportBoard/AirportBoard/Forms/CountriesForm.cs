@@ -1,4 +1,5 @@
-﻿using AirportBoard.Models;
+﻿using AirportBoard.Logging;
+using AirportBoard.Models;
 using AirportBoard.Services;
 using AirportBoard.Services.GridTools;
 using System;
@@ -16,6 +17,7 @@ namespace AirportBoard.Forms
     public partial class CountriesForm : Form
     {
         CountryService countryService = new CountryService();
+        Dictionary<string, string> values = new Dictionary<string, string>();
 
         public CountriesForm()
         {
@@ -31,26 +33,53 @@ namespace AirportBoard.Forms
 
         private void addCountry_Click(object sender, EventArgs e)
         {
-            string country = countryTextBox.Text;
+            try
+            {
+                string country = countryTextBox.Text;
 
-            Dictionary<string, string> values = new Dictionary<string, string>();
-            values.Add("name", country);
+                values.Clear();
+                values.Add("name", country);
 
-            countryService.setFields(values);
-            countryService.save();
-            loadData();
+                countryService.setFields(values);
+                countryService.save();
+                loadData();
+            }
+            catch (Exception exception)
+            {
+                Notification.show("Error", exception.Message);
+            }
         }
 
         private void updateCountry_Click(object sender, EventArgs e)
         {
-            countryService.update();
-            loadData();
+            try
+            {
+                string country = countryTextBox.Text;
+
+                values.Add("name", country);
+
+                countryService.setFields(values);
+                countryService.update();
+                loadData();
+            }
+            catch (Exception exception)
+            {
+                Notification.show("Error", exception.Message);
+            }
         }
 
         private void deleteCountry_Click(object sender, EventArgs e)
         {
-            countryService.delete();
-            loadData();
+            try
+            {
+                countryService.setFields(values);
+                countryService.delete();
+                loadData();
+            }
+            catch (Exception exception)
+            {
+                Notification.show("Error", exception.Message);
+            }
         }
 
         private void countriesGridView_RowStateChanged(object sender, EventArgs e)
@@ -59,16 +88,11 @@ namespace AirportBoard.Forms
             {
                 var row = countriesGridView.SelectedRows[0];
 
-                string id = Convert.ToString(row.Cells["countryIdColumn"].Value);
-                string country = Convert.ToString(row.Cells["countryNameColumn"].Value);
-
-                countryTextBox.Text = country;
-
-                Dictionary<string, string> values = new Dictionary<string, string>();
+                values.Clear();
+                string id = Convert.ToString(row.Cells["countryId"].Value);
                 values.Add("id", id);
-                values.Add("name", country);
 
-                countryService.setFields(values);
+                countryTextBox.Text = Convert.ToString(row.Cells["countryName"].Value);
             }
         }
 

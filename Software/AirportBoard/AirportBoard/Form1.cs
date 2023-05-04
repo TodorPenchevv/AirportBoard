@@ -1,6 +1,8 @@
 using AirportBoard.Models;
 using AirportBoard.Services;
 using AirportBoard.Forms;
+using AirportBoard.Services.GridTools;
+using System.Reflection;
 
 namespace AirportBoard
 {
@@ -9,6 +11,22 @@ namespace AirportBoard
         public Form1()
         {
             InitializeComponent();
+        }
+
+        private void Form1_Load(object sender, EventArgs e)
+        {
+            loadArrivasAndDepartures();
+        }
+
+        private void loadArrivasAndDepartures()
+        {
+            //Table.loadData(arrivalGridView, new Flight());
+            //Table.loadData(departureGridView, new Flight());
+
+            List<List<string>> rows = Flight.getAllDepartures();
+            Table.loadRowsIntoGridView(departureGridView, rows);
+            rows = Flight.getAllArrivals();
+            Table.loadRowsIntoGridView(arrivalGridView, rows);
         }
 
         private void airlinesButton_Click(object sender, EventArgs e)
@@ -41,9 +59,14 @@ namespace AirportBoard
             (new StatusesForm()).Show();
         }
 
-        private void button7_Click(object sender, EventArgs e)
+        private void button1_Click(object sender, EventArgs e)
         {
             (new GatesForm()).Show();
+        }
+
+        private void refreshButton_Click(object sender, EventArgs e)
+        {
+            loadArrivasAndDepartures();
         }
     }
 }

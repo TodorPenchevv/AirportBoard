@@ -44,14 +44,25 @@
             this.gateComboBox = new System.Windows.Forms.ComboBox();
             this.label1 = new System.Windows.Forms.Label();
             this.flightsGridView = new System.Windows.Forms.DataGridView();
-            this.flightIdColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.flightGateColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.flightToDestinationColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.flightFromDestinationColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.flightAirlineColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.flightStatusColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.flightTimeColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.label7 = new System.Windows.Forms.Label();
+            this.label8 = new System.Windows.Forms.Label();
+            this.hourNumericUpDown = new System.Windows.Forms.NumericUpDown();
+            this.minutesNumericUpDown = new System.Windows.Forms.NumericUpDown();
+            this.flightId = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.flightGate = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.flightToDestination = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.flightFromDestination = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.flightAirline = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.flightStatus = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.flightTime = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.flightGateId = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.flightToDestinationId = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.flightFromDestinationId = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.flightAirlineId = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.flightStatusId = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.flightsGridView)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.hourNumericUpDown)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.minutesNumericUpDown)).BeginInit();
             this.SuspendLayout();
             // 
             // flightDateTimePicker
@@ -67,9 +78,9 @@
             this.label6.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.label6.Location = new System.Drawing.Point(867, 289);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(42, 20);
+            this.label6.Size = new System.Drawing.Size(41, 20);
             this.label6.TabIndex = 30;
-            this.label6.Text = "Time";
+            this.label6.Text = "Date";
             // 
             // deleteFlight
             // 
@@ -80,6 +91,7 @@
             this.deleteFlight.TabIndex = 29;
             this.deleteFlight.Text = "Delete";
             this.deleteFlight.UseVisualStyleBackColor = true;
+            this.deleteFlight.Click += new System.EventHandler(this.deleteFlight_Click);
             // 
             // updateFlight
             // 
@@ -90,6 +102,7 @@
             this.updateFlight.TabIndex = 28;
             this.updateFlight.Text = "Update";
             this.updateFlight.UseVisualStyleBackColor = true;
+            this.updateFlight.Click += new System.EventHandler(this.updateFlight_Click);
             // 
             // addFlight
             // 
@@ -100,6 +113,7 @@
             this.addFlight.TabIndex = 27;
             this.addFlight.Text = "Add";
             this.addFlight.UseVisualStyleBackColor = true;
+            this.addFlight.Click += new System.EventHandler(this.addFlight_Click);
             // 
             // statusComboBox
             // 
@@ -193,69 +207,163 @@
             // 
             // flightsGridView
             // 
+            this.flightsGridView.AllowUserToAddRows = false;
+            this.flightsGridView.AllowUserToDeleteRows = false;
             this.flightsGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.flightsGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.flightIdColumn,
-            this.flightGateColumn,
-            this.flightToDestinationColumn,
-            this.flightFromDestinationColumn,
-            this.flightAirlineColumn,
-            this.flightStatusColumn,
-            this.flightTimeColumn});
+            this.flightId,
+            this.flightGate,
+            this.flightToDestination,
+            this.flightFromDestination,
+            this.flightAirline,
+            this.flightStatus,
+            this.flightTime,
+            this.flightGateId,
+            this.flightToDestinationId,
+            this.flightFromDestinationId,
+            this.flightAirlineId,
+            this.flightStatusId});
             this.flightsGridView.Location = new System.Drawing.Point(12, 12);
             this.flightsGridView.Name = "flightsGridView";
+            this.flightsGridView.ReadOnly = true;
             this.flightsGridView.RowTemplate.Height = 25;
             this.flightsGridView.Size = new System.Drawing.Size(849, 562);
             this.flightsGridView.TabIndex = 16;
             // 
-            // flightIdColumn
+            // label7
             // 
-            this.flightIdColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.flightIdColumn.HeaderText = "ID";
-            this.flightIdColumn.Name = "flightIdColumn";
+            this.label7.AutoSize = true;
+            this.label7.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label7.Location = new System.Drawing.Point(869, 349);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(42, 20);
+            this.label7.TabIndex = 32;
+            this.label7.Text = "Hour";
             // 
-            // flightGateColumn
+            // label8
             // 
-            this.flightGateColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.flightGateColumn.HeaderText = "GATE";
-            this.flightGateColumn.Name = "flightGateColumn";
+            this.label8.AutoSize = true;
+            this.label8.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label8.Location = new System.Drawing.Point(973, 349);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(61, 20);
+            this.label8.TabIndex = 33;
+            this.label8.Text = "Minutes";
             // 
-            // flightToDestinationColumn
+            // hourNumericUpDown
             // 
-            this.flightToDestinationColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.flightToDestinationColumn.HeaderText = "TO";
-            this.flightToDestinationColumn.Name = "flightToDestinationColumn";
+            this.hourNumericUpDown.Location = new System.Drawing.Point(869, 372);
+            this.hourNumericUpDown.Maximum = new decimal(new int[] {
+            23,
+            0,
+            0,
+            0});
+            this.hourNumericUpDown.Name = "hourNumericUpDown";
+            this.hourNumericUpDown.Size = new System.Drawing.Size(95, 23);
+            this.hourNumericUpDown.TabIndex = 34;
             // 
-            // flightFromDestinationColumn
+            // minutesNumericUpDown
             // 
-            this.flightFromDestinationColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.flightFromDestinationColumn.HeaderText = "FROM";
-            this.flightFromDestinationColumn.Name = "flightFromDestinationColumn";
+            this.minutesNumericUpDown.Location = new System.Drawing.Point(973, 372);
+            this.minutesNumericUpDown.Maximum = new decimal(new int[] {
+            59,
+            0,
+            0,
+            0});
+            this.minutesNumericUpDown.Name = "minutesNumericUpDown";
+            this.minutesNumericUpDown.Size = new System.Drawing.Size(97, 23);
+            this.minutesNumericUpDown.TabIndex = 35;
             // 
-            // flightAirlineColumn
+            // flightId
             // 
-            this.flightAirlineColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.flightAirlineColumn.HeaderText = "AIRLINE";
-            this.flightAirlineColumn.Name = "flightAirlineColumn";
+            this.flightId.HeaderText = "ID";
+            this.flightId.Name = "flightId";
+            this.flightId.ReadOnly = true;
+            this.flightId.Width = 50;
             // 
-            // flightStatusColumn
+            // flightGate
             // 
-            this.flightStatusColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells;
-            this.flightStatusColumn.HeaderText = "STATUS";
-            this.flightStatusColumn.Name = "flightStatusColumn";
-            this.flightStatusColumn.Width = 70;
+            this.flightGate.HeaderText = "GATE";
+            this.flightGate.Name = "flightGate";
+            this.flightGate.ReadOnly = true;
             // 
-            // flightTimeColumn
+            // flightToDestination
             // 
-            this.flightTimeColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.flightTimeColumn.HeaderText = "TIME";
-            this.flightTimeColumn.Name = "flightTimeColumn";
+            this.flightToDestination.HeaderText = "TO";
+            this.flightToDestination.Name = "flightToDestination";
+            this.flightToDestination.ReadOnly = true;
+            this.flightToDestination.Width = 150;
+            // 
+            // flightFromDestination
+            // 
+            this.flightFromDestination.HeaderText = "FROM";
+            this.flightFromDestination.Name = "flightFromDestination";
+            this.flightFromDestination.ReadOnly = true;
+            this.flightFromDestination.Width = 150;
+            // 
+            // flightAirline
+            // 
+            this.flightAirline.HeaderText = "AIRLINE";
+            this.flightAirline.Name = "flightAirline";
+            this.flightAirline.ReadOnly = true;
+            this.flightAirline.Width = 150;
+            // 
+            // flightStatus
+            // 
+            this.flightStatus.HeaderText = "STATUS";
+            this.flightStatus.Name = "flightStatus";
+            this.flightStatus.ReadOnly = true;
+            this.flightStatus.Width = 150;
+            // 
+            // flightTime
+            // 
+            this.flightTime.HeaderText = "TIME";
+            this.flightTime.Name = "flightTime";
+            this.flightTime.ReadOnly = true;
+            this.flightTime.Width = 150;
+            // 
+            // flightGateId
+            // 
+            this.flightGateId.HeaderText = "GATE_ID";
+            this.flightGateId.Name = "flightGateId";
+            this.flightGateId.ReadOnly = true;
+            this.flightGateId.Width = 60;
+            // 
+            // flightToDestinationId
+            // 
+            this.flightToDestinationId.HeaderText = "TO_ID";
+            this.flightToDestinationId.Name = "flightToDestinationId";
+            this.flightToDestinationId.ReadOnly = true;
+            this.flightToDestinationId.Width = 60;
+            // 
+            // flightFromDestinationId
+            // 
+            this.flightFromDestinationId.HeaderText = "FROM_ID";
+            this.flightFromDestinationId.Name = "flightFromDestinationId";
+            this.flightFromDestinationId.ReadOnly = true;
+            this.flightFromDestinationId.Width = 60;
+            // 
+            // flightAirlineId
+            // 
+            this.flightAirlineId.HeaderText = "AIRLINE_ID";
+            this.flightAirlineId.Name = "flightAirlineId";
+            this.flightAirlineId.ReadOnly = true;
+            // 
+            // flightStatusId
+            // 
+            this.flightStatusId.HeaderText = "STATUS_ID";
+            this.flightStatusId.Name = "flightStatusId";
+            this.flightStatusId.ReadOnly = true;
             // 
             // FlightsForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1081, 585);
+            this.Controls.Add(this.minutesNumericUpDown);
+            this.Controls.Add(this.hourNumericUpDown);
+            this.Controls.Add(this.label8);
+            this.Controls.Add(this.label7);
             this.Controls.Add(this.flightDateTimePicker);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.deleteFlight);
@@ -274,7 +382,10 @@
             this.Controls.Add(this.flightsGridView);
             this.Name = "FlightsForm";
             this.Text = "FlightsForm";
+            this.Load += new System.EventHandler(this.FlightsForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.flightsGridView)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.hourNumericUpDown)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.minutesNumericUpDown)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -298,12 +409,21 @@
         private ComboBox gateComboBox;
         private Label label1;
         private DataGridView flightsGridView;
-        private DataGridViewTextBoxColumn flightIdColumn;
-        private DataGridViewTextBoxColumn flightGateColumn;
-        private DataGridViewTextBoxColumn flightToDestinationColumn;
-        private DataGridViewTextBoxColumn flightFromDestinationColumn;
-        private DataGridViewTextBoxColumn flightAirlineColumn;
-        private DataGridViewTextBoxColumn flightStatusColumn;
-        private DataGridViewTextBoxColumn flightTimeColumn;
+        private Label label7;
+        private Label label8;
+        private NumericUpDown hourNumericUpDown;
+        private NumericUpDown minutesNumericUpDown;
+        private DataGridViewTextBoxColumn flightId;
+        private DataGridViewTextBoxColumn flightGate;
+        private DataGridViewTextBoxColumn flightToDestination;
+        private DataGridViewTextBoxColumn flightFromDestination;
+        private DataGridViewTextBoxColumn flightAirline;
+        private DataGridViewTextBoxColumn flightStatus;
+        private DataGridViewTextBoxColumn flightTime;
+        private DataGridViewTextBoxColumn flightGateId;
+        private DataGridViewTextBoxColumn flightToDestinationId;
+        private DataGridViewTextBoxColumn flightFromDestinationId;
+        private DataGridViewTextBoxColumn flightAirlineId;
+        private DataGridViewTextBoxColumn flightStatusId;
     }
 }

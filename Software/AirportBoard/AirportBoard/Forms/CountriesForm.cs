@@ -35,11 +35,8 @@ namespace AirportBoard.Forms
         {
             try
             {
-                string country = countryTextBox.Text;
-
                 values.Clear();
-                values.Add("name", country);
-
+                getFieldValues();
                 countryService.setFields(values);
                 countryService.save();
                 loadData();
@@ -54,10 +51,7 @@ namespace AirportBoard.Forms
         {
             try
             {
-                string country = countryTextBox.Text;
-
-                values.Add("name", country);
-
+                getFieldValues();
                 countryService.setFields(values);
                 countryService.update();
                 loadData();
@@ -66,6 +60,13 @@ namespace AirportBoard.Forms
             {
                 Notification.show("Error", exception.Message);
             }
+        }
+
+        private void getFieldValues()
+        {
+            string country = countryTextBox.Text;
+
+            values.Add("name", country);
         }
 
         private void deleteCountry_Click(object sender, EventArgs e)

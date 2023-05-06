@@ -42,12 +42,12 @@ namespace AirportBoard.Models
             string query =
                 "SELECT " +
                     "flights.id, " +
+                    "flights.time, " +
                     "gates.[zone] & gates.[gate_number], " +
                     "to_dst.airport, " +
                     "from_dst.airport, " +
                     "airlines.name, " +
                     "flight_status.status, " +
-                    "flights.time, " +
                     "flights.gate_id, " +
                     "flights.to_destination_id, " +
                     "flights.from_destination_id, " +
@@ -63,7 +63,8 @@ namespace AirportBoard.Models
                 "LEFT JOIN airlines " +
                 "ON airlines.id = flights.airline_id) " +
                 "LEFT JOIN flight_status " +
-                "ON flight_status.id = flights.status_id";
+                "ON flight_status.id = flights.status_id " +
+                "ORDER BY flights.time";
 
             return runSelect(query);
         }

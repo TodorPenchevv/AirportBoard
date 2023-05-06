@@ -42,7 +42,8 @@ namespace AirportBoard.Models
                 "LEFT JOIN cities " +
                 "ON cities.id = destinations.city_id) " +
                 "LEFT JOIN countries " +
-                "ON countries.id = cities.country_id ";
+                "ON countries.id = cities.country_id " +
+                "ORDER BY countries.name, cities.name, destinations.airport ";
 
             return runSelect(query);
         }

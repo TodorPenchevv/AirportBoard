@@ -49,12 +49,12 @@
             this.hourNumericUpDown = new System.Windows.Forms.NumericUpDown();
             this.minutesNumericUpDown = new System.Windows.Forms.NumericUpDown();
             this.flightId = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.flightTime = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.flightGate = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.flightToDestination = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.flightFromDestination = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.flightAirline = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.flightStatus = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.flightTime = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.flightGateId = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.flightToDestinationId = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.flightFromDestinationId = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -212,12 +212,12 @@
             this.flightsGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.flightsGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.flightId,
+            this.flightTime,
             this.flightGate,
             this.flightToDestination,
             this.flightFromDestination,
             this.flightAirline,
             this.flightStatus,
-            this.flightTime,
             this.flightGateId,
             this.flightToDestinationId,
             this.flightFromDestinationId,
@@ -281,6 +281,13 @@
             this.flightId.ReadOnly = true;
             this.flightId.Width = 50;
             // 
+            // flightTime
+            // 
+            this.flightTime.HeaderText = "TIME";
+            this.flightTime.Name = "flightTime";
+            this.flightTime.ReadOnly = true;
+            this.flightTime.Width = 150;
+            // 
             // flightGate
             // 
             this.flightGate.HeaderText = "GATE";
@@ -314,13 +321,6 @@
             this.flightStatus.Name = "flightStatus";
             this.flightStatus.ReadOnly = true;
             this.flightStatus.Width = 150;
-            // 
-            // flightTime
-            // 
-            this.flightTime.HeaderText = "TIME";
-            this.flightTime.Name = "flightTime";
-            this.flightTime.ReadOnly = true;
-            this.flightTime.Width = 150;
             // 
             // flightGateId
             // 
@@ -414,12 +414,12 @@
         private NumericUpDown hourNumericUpDown;
         private NumericUpDown minutesNumericUpDown;
         private DataGridViewTextBoxColumn flightId;
+        private DataGridViewTextBoxColumn flightTime;
         private DataGridViewTextBoxColumn flightGate;
         private DataGridViewTextBoxColumn flightToDestination;
         private DataGridViewTextBoxColumn flightFromDestination;
         private DataGridViewTextBoxColumn flightAirline;
         private DataGridViewTextBoxColumn flightStatus;
-        private DataGridViewTextBoxColumn flightTime;
         private DataGridViewTextBoxColumn flightGateId;
         private DataGridViewTextBoxColumn flightToDestinationId;
         private DataGridViewTextBoxColumn flightFromDestinationId;

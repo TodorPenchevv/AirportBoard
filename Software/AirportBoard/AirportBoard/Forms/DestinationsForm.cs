@@ -37,13 +37,8 @@ namespace AirportBoard.Forms
         {
             try
             {
-                string airport = airportNameTextBox.Text;
-                string cityId = (destinationCityComboBox.SelectedItem as ComboBoxItem).Value.ToString(); // Get selected country id
-
                 values.Clear();
-                values.Add("airport", airport);
-                values.Add("cityId", cityId);
-
+                getFieldValues();
                 destinationService.setFields(values);
                 destinationService.save();
                 destinationsLoadData();
@@ -58,12 +53,7 @@ namespace AirportBoard.Forms
         {
             try
             {
-                string airport = airportNameTextBox.Text;
-                string cityId = (destinationCityComboBox.SelectedItem as ComboBoxItem).Value.ToString();
-
-                values.Add("airport", airport);
-                values.Add("cityId", cityId);
-
+                getFieldValues();
                 destinationService.setFields(values);
                 destinationService.update();
                 destinationsLoadData();
@@ -73,8 +63,16 @@ namespace AirportBoard.Forms
                 Notification.show("Error", exception.Message);
             }
         }
+        private void getFieldValues()
+        {
+            string airport = airportNameTextBox.Text;
+            string cityId = (destinationCityComboBox.SelectedItem as ComboBoxItem).Value.ToString();
 
-        private void deleteDestination_Click(object sender, EventArgs e)
+            values.Add("airport", airport);
+            values.Add("cityId", cityId);
+        }
+
+            private void deleteDestination_Click(object sender, EventArgs e)
         {
             try
             {
@@ -101,8 +99,7 @@ namespace AirportBoard.Forms
                 airportNameTextBox.Text = Convert.ToString(row.Cells["destinationAirport"].Value);
 
                 string city = Convert.ToString(row.Cells["destinationCityId"].Value);
-                setSelectedCity(city);
-                //Set comboBox item with this country to be selected
+                SelectedItem.set(destinationCityComboBox, city);
             }
         }
 
@@ -124,20 +121,6 @@ namespace AirportBoard.Forms
             }
 
             destinationCityComboBox.SelectedIndex = 0;
-        }
-
-        private void setSelectedCity(string city)
-        {
-            string text;
-            for (int i = 0; i < destinationCityComboBox.Items.Count; i++)
-            {
-                text = (destinationCityComboBox.Items[i] as ComboBoxItem).Value.ToString();
-                if (city == text)
-                {
-                    destinationCityComboBox.SelectedIndex = i;
-                    break;
-                }
-            }
         }
     }
 }

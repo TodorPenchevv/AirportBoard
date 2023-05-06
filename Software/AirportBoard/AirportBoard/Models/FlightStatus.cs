@@ -30,6 +30,12 @@ namespace AirportBoard.Models
             runQuery(query);
         }
 
+        public override List<List<string>> getAll()
+        {
+            string query = String.Format("SELECT * FROM {0} ORDER BY status", tableName);
+            return runSelect(query);
+        }
+
         public override string getId()
         {
             return id;

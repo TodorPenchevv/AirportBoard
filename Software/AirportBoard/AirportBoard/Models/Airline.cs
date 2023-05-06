@@ -45,7 +45,8 @@ namespace AirportBoard.Models
                 "SELECT airlines.id, airlines.name, airlines.country_id, countries.name " +
                 "FROM airlines " + 
                 "LEFT JOIN countries " +
-                "ON countries.id = airlines.country_id";
+                "ON countries.id = airlines.country_id " +
+                "ORDER BY airlines.name";
 
             return runSelect(query);
         }

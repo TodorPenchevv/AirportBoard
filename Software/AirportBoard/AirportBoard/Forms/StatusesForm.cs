@@ -36,8 +36,7 @@ namespace AirportBoard.Forms
             try
             {
                 values.Clear();
-                values.Add("statusName", statusNameTextBox.Text);
-
+                getFieldValues();
                 statusService.setFields(values);
                 statusService.save();
                 statusesLoadData();
@@ -52,9 +51,7 @@ namespace AirportBoard.Forms
         {
             try
             {
-                values.Add("statusName", statusNameTextBox.Text);
-
-                statusService.setFields(values);
+                getFieldValues();
                 statusService.update();
                 statusesLoadData();
             }
@@ -62,6 +59,13 @@ namespace AirportBoard.Forms
             {
                 Notification.show("Error", exception.Message);
             }
+        }
+
+        private void getFieldValues()
+        {
+            values.Add("statusName", statusNameTextBox.Text);
+
+            statusService.setFields(values);
         }
 
         private void deleteStatus_Click(object sender, EventArgs e)

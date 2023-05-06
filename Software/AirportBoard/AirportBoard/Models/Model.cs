@@ -46,7 +46,7 @@ namespace AirportBoard.Models
             dbConnect.Close();
         }
 
-        public List<List<string>> getAll()
+        public virtual List<List<string>> getAll()
         {
             string query = String.Format("SELECT * FROM {0}", tableName);
             return runSelect(query);

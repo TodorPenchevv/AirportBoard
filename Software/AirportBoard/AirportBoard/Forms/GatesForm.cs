@@ -36,9 +36,7 @@ namespace AirportBoard.Forms
             try
             {
                 values.Clear();
-                values.Add("zone", gateZoneTextBox.Text);
-                values.Add("number", gateNumberTextBox.Text);
-
+                getFieldValues();
                 gateService.setFields(values);
                 gateService.save();
                 gatesLoadData();
@@ -53,9 +51,7 @@ namespace AirportBoard.Forms
         {
             try
             {
-                values.Add("zone", gateZoneTextBox.Text);
-                values.Add("number", gateNumberTextBox.Text);
-
+                getFieldValues();
                 gateService.setFields(values);
                 gateService.update();
                 gatesLoadData();
@@ -64,6 +60,14 @@ namespace AirportBoard.Forms
             {
                 Notification.show("Error", exception.Message);
             }
+        }
+
+        private void getFieldValues()
+        {
+            values.Add("zone", gateZoneTextBox.Text);
+            values.Add("number", gateNumberTextBox.Text);
+
+            gateService.setFields(values);
         }
 
         private void deleteGate_Click(object sender, EventArgs e)

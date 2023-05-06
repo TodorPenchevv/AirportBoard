@@ -96,11 +96,22 @@ namespace AirportBoard.Forms
                 string id = Convert.ToString(row.Cells["flightId"].Value);
                 values.Add("id", id);
 
-                //airportNameTextBox.Text = Convert.ToString(row.Cells["destinationAirport"].Value);
+                string gateId = Convert.ToString(row.Cells["flightGateId"].Value);
+                SelectedItem.set(gateComboBox, gateId);
 
-                string country = Convert.ToString(row.Cells["flightFromDestinationId"].Value);
-                setSelectedFromDestination(country);
-                //Set comboBox item with this country to be selected
+                string countryId = Convert.ToString(row.Cells["flightFromDestinationId"].Value);
+                SelectedItem.set(fromComboBox, countryId);
+
+                countryId = Convert.ToString(row.Cells["flightToDestinationId"].Value);
+                SelectedItem.set(toComboBox, countryId);
+
+                string statusId = Convert.ToString(row.Cells["flightStatusId"].Value);
+                SelectedItem.set(statusComboBox, statusId);
+
+                string airlineId = Convert.ToString(row.Cells["flightAirlineId"].Value);
+                SelectedItem.set(airlinesComboBox, airlineId);
+
+                string time = Convert.ToString(row.Cells["flightTime"].Value);
             }
         }
 
@@ -177,20 +188,6 @@ namespace AirportBoard.Forms
             statusComboBox.SelectedIndex = 0;
         }
 
-        private void setSelectedFromDestination(string country)
-        {
-            string text;
-            for (int i = 0; i < fromComboBox.Items.Count; i++)
-            {
-                text = (fromComboBox.Items[i] as ComboBoxItem).Value.ToString();
-                if (country == text)
-                {
-                    fromComboBox.SelectedIndex = i;
-                    break;
-                }
-            }
-        }
-
         private void getFieldValues()
         {
             string gateId = (gateComboBox.SelectedItem as ComboBoxItem).Value.ToString(); // Get selected gate id
@@ -209,7 +206,6 @@ namespace AirportBoard.Forms
             values.Add("airlineId", airlineId);
             values.Add("statusId", statusId);
             values.Add("time", date + " " + hour + ":" + minutes + ":00");
-
         }
     }
 }
